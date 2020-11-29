@@ -1,7 +1,7 @@
 @extends('plantillas/menuProyecto')
 @section('contenido')
 
-<div class="banner">
+<div class="banner" style="background: url(images/casas.jpg)">
     <div class="container">
         <div class="row mb-4">
             <div class="col text-center">

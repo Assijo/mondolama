@@ -384,6 +384,7 @@ html
 
 .banner
 {
-  background: url(images/casas.jpg) cover;
+  background: url(images/casas.jpg);
   height: 700px;
+  display: block;
 }
