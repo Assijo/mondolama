@@ -2,7 +2,7 @@
 @section('menu')
 <nav id="custom-navbar" class="navbar navbar-expand-sm custom-navbar">
   <!-- Just an image -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar">
     <a class="navbar-brand" href="#">
         <img src="images/casa.svg" width="60" height="60" alt="" loading="lazy">
     </a>

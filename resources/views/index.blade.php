@@ -130,7 +130,7 @@
 </div>
 
 <a href="#custom-navbar" class="btn scroll-to-top ml-auto">
-  <svg width="20px" height="20px" viewBox="0 0 490 490" class="svg-scroll-to-top">
+  <svg width="20px" height="20px" viewBox="0 0 490 490" class="svg">
     <path d="M479.9,256c-2.8,0-5.5-1.1-7.6-3.1L245.2,25.7L18.1,252.9c-4.2,4.1-11,4-15.1-0.3c-4-4.1-4-10.7,0-14.8L237.7,3.1
     c4.2-4.2,10.9-4.2,15.1,0l234.7,234.7c4.2,4.2,4.1,10.9,0,15.1C485.4,254.9,482.7,256,479.9,256z"/>
   </svg>

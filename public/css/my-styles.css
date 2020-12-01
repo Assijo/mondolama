@@ -311,6 +311,13 @@ html
   cursor: pointer;
 }
 
+.custom-navbar-transparente
+{
+  background: none;
+  z-index: 999;
+  top: 0px;
+}
+
 /*clases del carousel*/
 
 .custom-carousel
@@ -339,9 +346,10 @@ html
   border-color: #127a29;
   box-shadow: 0 0 0 0.2rem rgba(18, 122, 41, 0.25);
 }
-.svg-scroll-to-top
+.svg
 {
   fill: white;
+  margin-bottom: 4px;
 }
 /*clases del boton de ver en el index*/
 
@@ -384,7 +392,11 @@ html
 
 .banner
 {
-  background: url(images/casas.jpg);
-  height: 700px;
-  display: block;
+  background: url(../images/unsplash3.jpg);
+  top: -102px; 
+  z-index: 20;
+  position: relative;
+  color: white;
+  padding-top: 280px;
+  padding-bottom: 50px;
 }
