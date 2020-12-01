@@ -1,4 +1,4 @@
-@extends('plantillas/menuProyecto')
+@extends('plantillas/menuBanner')
 @section('contenido')
 
 <div id="banner" class="banner">
@@ -48,7 +48,7 @@
     <div class="row my-5">
         <div class="col my-5">
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?autoplay=1" allowfullscreen allow="autoplay; fullscreen; picture-in-picture; xr-spatial-tracking; encrypted-media"></iframe>
             </div>
         </div>
     </div>
@@ -81,20 +81,20 @@
 <div class="container mb-5">
     <div class="row my-5">
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at 
-        elementum eu. Tristique risus nec feugiat in fermentum. Porta lorem mollis aliquam ut porttitor leo. Id donec ultrices tincidunt arcu non sodales neque 
-        sodales ut. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Eu scelerisque felis imperdiet proin fermentum. Etiam erat velit scelerisque in 
-        dictum non consectetur a erat. Pretium lectus quam id leo in. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Lectus urna duis convallis 
-        convallis. Habitant morbi tristique senectus et netus. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. In nibh mauris cursus mattis molestie. 
-        Mattis molestie a iaculis at erat pellentesque adipiscing. Vitae justo eget magna fermentum. Nullam eget felis eget nunc.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at 
+            elementum eu. Tristique risus nec feugiat in fermentum. Porta lorem mollis aliquam ut porttitor leo. Id donec ultrices tincidunt arcu non sodales neque 
+            sodales ut. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Eu scelerisque felis imperdiet proin fermentum. Etiam erat velit scelerisque in 
+            dictum non consectetur a erat. Pretium lectus quam id leo in. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Lectus urna duis convallis 
+            convallis. Habitant morbi tristique senectus et netus. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. In nibh mauris cursus mattis molestie. 
+            Mattis molestie a iaculis at erat pellentesque adipiscing. Vitae justo eget magna fermentum. Nullam eget felis eget nunc.
         </p>
         <p>
-        Vitae congue eu consequat ac felis donec et odio. Iaculis urna id volutpat lacus. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. 
-        Aliquam malesuada bibendum arcu vitae. Laoreet id donec ultrices tincidunt arcu non sodales neque. Purus ut faucibus pulvinar elementum integer enim 
-        neque. Integer eget aliquet nibh praesent tristique magna sit. Fringilla ut morbi tincidunt augue interdum velit. Porttitor rhoncus dolor purus non enim 
-        praesent. Ipsum nunc aliquet bibendum enim facilisis gravida. Bibendum ut tristique et egestas quis ipsum suspendisse. Ornare quam viverra orci sagittis. 
-        Adipiscing commodo elit at imperdiet dui accumsan. Vestibulum sed arcu non odio euismod. Sit amet nisl purus in. Tellus cras adipiscing enim eu turpis 
-        egestas pretium. Vulputate ut pharetra sit amet aliquam id diam.
+            Vitae congue eu consequat ac felis donec et odio. Iaculis urna id volutpat lacus. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. 
+            Aliquam malesuada bibendum arcu vitae. Laoreet id donec ultrices tincidunt arcu non sodales neque. Purus ut faucibus pulvinar elementum integer enim 
+            neque. Integer eget aliquet nibh praesent tristique magna sit. Fringilla ut morbi tincidunt augue interdum velit. Porttitor rhoncus dolor purus non enim 
+            praesent. Ipsum nunc aliquet bibendum enim facilisis gravida. Bibendum ut tristique et egestas quis ipsum suspendisse. Ornare quam viverra orci sagittis. 
+            Adipiscing commodo elit at imperdiet dui accumsan. Vestibulum sed arcu non odio euismod. Sit amet nisl purus in. Tellus cras adipiscing enim eu turpis 
+            egestas pretium. Vulputate ut pharetra sit amet aliquam id diam.
         </p>
     </div>
     <div class="row">

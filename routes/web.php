@@ -43,6 +43,14 @@ Route::get('/vistaproyecto', function () {
     return view('vistaProyecto');
 });
 
-Route::get('/prueba', function () {
-    return view('prueba');
+Route::get('/acercade', function () {
+    return view('acercaDe');
+});
+
+Route::get('/terminoscondiciones', function () {
+    return view('terminosCondiciones');
+});
+
+Route::get('/politicasprivacidad', function () {
+    return view('politicasPrivacidad');
 });
