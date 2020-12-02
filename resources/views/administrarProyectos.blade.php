@@ -19,7 +19,7 @@
                 </form>
             </div>
             <div class="col d-flex align-items-start">
-            <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#agregarProyecto">Agregar proyecto</button>
+                <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#agregarProyecto">Agregar proyecto</button>
             </div>
         </div>
         <div class="row my-5 align-items-center">

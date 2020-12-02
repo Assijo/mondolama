@@ -1,6 +1,6 @@
 @extends('plantillas/encabezadoYPieDePagina')
 @section('menu')
-<nav id="custom-navbar" class="navbar navbar-expand-sm custom-navbar-transparente">
+<nav id="custom-navbar" class="navbar navbar-expand-sm navbar-dark bg-dark">
     <nav class="navbar">
     <a class="navbar-brand" href="#">
         <img src="images/casa.svg" width="60" height="60" alt="" loading="lazy">
@@ -16,7 +16,7 @@
         <a class="nav-link custom-navbar-link" href="#">Acerca de nosotros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link custom-navbar-link" href="#">Iniciar sesión</a>
+        <a class="nav-link custom-navbar-link" href="#">Inicio</a>
       </li>
     </ul>
   </div>

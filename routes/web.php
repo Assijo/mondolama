@@ -54,3 +54,39 @@ Route::get('/terminoscondiciones', function () {
 Route::get('/politicasprivacidad', function () {
     return view('politicasPrivacidad');
 });
+
+Route::get('/pagosclientes', function () {
+    return view('pagosClientes');
+});
+
+Route::get('/pagosempleados', function () {
+    return view('pagosEmpleados');
+});
+
+Route::get('/vendedoresproyectos', function () {
+    return view('vendedoresProyectos');
+});
+
+Route::get('/documentosclientes', function () {
+    return view('documentosClientes');
+});
+
+Route::get('/proyectosactivosinactivos', function () {
+    return view('proyectosActivosInactivos');
+});
+
+Route::get('/usuarios', function () {
+    return view('usuarios');
+});
+
+Route::get('/pagosaprobar', function () {
+    return view('pagosAprobar');
+});
+
+Route::get('/empleados', function () {
+    return view('empleados');
+});
+
+Route::get('/verperfil', function () {
+    return view('verPerfil');
+});

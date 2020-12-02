@@ -400,3 +400,37 @@ html
   padding-top: 250px;
   padding-bottom: 50px;
 }
+
+/*clases de las tablas*/
+
+.tabla
+{
+  font-size: 0.7rem;
+}
+
+.tabla .th
+{
+  border-top: none;
+}
+.tabla .th1
+{
+  border-top: none;
+  border-bottom: none;
+}
+
+.tabla-letra-normal
+{
+  font-size: 1rem;
+}
+
+/*clases de las custom-tabs*/
+
+.custom-tab
+{
+  color: #6c757d;
+}
+
+.custom-tab:hover
+{
+  color: #6c757d;
+}
