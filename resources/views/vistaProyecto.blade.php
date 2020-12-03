@@ -19,8 +19,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-4"></div>
-            <div class="col-2 text-center">
+            <div class="col"></div>
+            <div class="col-sm-2 col-md-4 text-center">
                 <svg width="12px" height="12px" viewBox="0 0 400 512" class="svg">
                     <path class="st0" d="M181.3,0C81.3,0,0,81.3,0,181.3c0,96.7,165.8,317.1,172.8,326.4c2,2.7,5.2,4.2,8.5,4.2s6.5-1.6,8.5-4.2
                     c7.1-9.3,172.8-229.7,172.8-326.4C362.7,81.3,281.3,0,181.3,0z M181.3,277.3c-52.9,0-96-43.1-96-96s43.1-96,96-96s96,43.1,96,96
@@ -28,7 +28,7 @@
                 </svg>
                 Pto. Vallarta
             </div>
-            <div class="col-2 text-center">
+            <div class="col-sm-2 col-md-4 text-center">
                 <svg width="12px" height="12px" viewBox="0 0 400 512" class="svg">
                     <path d="M512,248.7L512,248.7L512,248.7z M168.2,431.5l49-49c-58.7-13.8-103-65.4-105.8-127.6l-55.8-55.8L0,254.6
                     C2.9,378,94.8,476.9,210.6,494.5l-42.5-42.5C162.5,446.4,162.5,437.2,168.2,431.5z M329.2,65.9l-49,49
@@ -39,7 +39,7 @@
                 </svg>
                 Fase 2
             </div>
-            <div class="col-4"></div>
+            <div class="col"></div>
         </div>
     </div>
 </div>
@@ -80,28 +80,34 @@
 
 <div class="container mb-5">
     <div class="row my-5">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at 
-            elementum eu. Tristique risus nec feugiat in fermentum. Porta lorem mollis aliquam ut porttitor leo. Id donec ultrices tincidunt arcu non sodales neque 
-            sodales ut. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Eu scelerisque felis imperdiet proin fermentum. Etiam erat velit scelerisque in 
-            dictum non consectetur a erat. Pretium lectus quam id leo in. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Lectus urna duis convallis 
-            convallis. Habitant morbi tristique senectus et netus. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. In nibh mauris cursus mattis molestie. 
-            Mattis molestie a iaculis at erat pellentesque adipiscing. Vitae justo eget magna fermentum. Nullam eget felis eget nunc.
-        </p>
-        <p>
-            Vitae congue eu consequat ac felis donec et odio. Iaculis urna id volutpat lacus. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. 
-            Aliquam malesuada bibendum arcu vitae. Laoreet id donec ultrices tincidunt arcu non sodales neque. Purus ut faucibus pulvinar elementum integer enim 
-            neque. Integer eget aliquet nibh praesent tristique magna sit. Fringilla ut morbi tincidunt augue interdum velit. Porttitor rhoncus dolor purus non enim 
-            praesent. Ipsum nunc aliquet bibendum enim facilisis gravida. Bibendum ut tristique et egestas quis ipsum suspendisse. Ornare quam viverra orci sagittis. 
-            Adipiscing commodo elit at imperdiet dui accumsan. Vestibulum sed arcu non odio euismod. Sit amet nisl purus in. Tellus cras adipiscing enim eu turpis 
-            egestas pretium. Vulputate ut pharetra sit amet aliquam id diam.
-        </p>
+        <div class="col">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at 
+                elementum eu. Tristique risus nec feugiat in fermentum. Porta lorem mollis aliquam ut porttitor leo. Id donec ultrices tincidunt arcu non sodales neque 
+                sodales ut. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Eu scelerisque felis imperdiet proin fermentum. Etiam erat velit scelerisque in 
+                dictum non consectetur a erat. Pretium lectus quam id leo in. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Lectus urna duis convallis 
+                convallis. Habitant morbi tristique senectus et netus. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. In nibh mauris cursus mattis molestie. 
+                Mattis molestie a iaculis at erat pellentesque adipiscing. Vitae justo eget magna fermentum. Nullam eget felis eget nunc.
+            </p>
+            <p>
+                Vitae congue eu consequat ac felis donec et odio. Iaculis urna id volutpat lacus. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. 
+                Aliquam malesuada bibendum arcu vitae. Laoreet id donec ultrices tincidunt arcu non sodales neque. Purus ut faucibus pulvinar elementum integer enim 
+                neque. Integer eget aliquet nibh praesent tristique magna sit. Fringilla ut morbi tincidunt augue interdum velit. Porttitor rhoncus dolor purus non enim 
+                praesent. Ipsum nunc aliquet bibendum enim facilisis gravida. Bibendum ut tristique et egestas quis ipsum suspendisse. Ornare quam viverra orci sagittis. 
+                Adipiscing commodo elit at imperdiet dui accumsan. Vestibulum sed arcu non odio euismod. Sit amet nisl purus in. Tellus cras adipiscing enim eu turpis 
+                egestas pretium. Vulputate ut pharetra sit amet aliquam id diam.
+            </p>
+        </div>
     </div>
     <div class="row">
-        <h6><b>LOTE: $224,000.00 MXN</b></h6>
+        <div class="col">
+            <h6><b>LOTE: $224,000.00 MXN</b></h6>
+        </div>
     </div>
     <div class="row">
-        <h6><b>TOTAL: $3,500,000.00 MXN</b></h6>
+        <div class="col">
+            <h6><b>TOTAL: $3,500,000.00 MXN</b></h6>
+        </div>
     </div>
 </div>
 

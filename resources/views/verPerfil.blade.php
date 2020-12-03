@@ -1,18 +1,15 @@
 @extends('plantillas/menuNavegacion')
-@extends('modales/agregarFoto')
-@extends('modales/agregarProyecto')
-@extends('modales/modificarProyecto')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
             <div class="col-10"></div>
-            <div class="col-2 d-flex align-items-start">
-                <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#agregarProyecto">Modificar datos</button>
+            <div class="col-sm-2 d-flex align-items-start">
+                <button type="button" class="btn btn-dark ml-sm- ml-auto" data-toggle="modal" data-target="#agregarProyecto">Modificar datos</button>
             </div>
         </div>
         <div class="row my-5 align-items-center">
             <div class="col-3"></div>
-            <div class="col-6 table-responsive">
+            <div class="col-sm-6 table-responsive">
                 <table class="table">
                     <thead>
                         <tr>

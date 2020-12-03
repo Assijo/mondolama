@@ -90,3 +90,7 @@ Route::get('/empleados', function () {
 Route::get('/verperfil', function () {
     return view('verPerfil');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});

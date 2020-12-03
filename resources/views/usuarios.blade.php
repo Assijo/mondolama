@@ -1,11 +1,8 @@
 @extends('plantillas/menuNavegacion')
-@extends('modales/agregarFoto')
-@extends('modales/agregarProyecto')
-@extends('modales/modificarProyecto')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
-            <div class="col">
+            <div class="col-sm-4 d-flex align-items-start">
                 <form class="form-inline">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-dark" type="submit">
@@ -15,13 +12,15 @@
                             C55,118,117.7,55.3,194.8,55.3S334.6,118,334.6,195.1S271.9,334.9,194.8,334.9z"/>
                         </svg>
                     </button>
-                    <select class="form-control ml-5" id="exampleFormControlSelect1">
-                        <option>Tipo de usuario...</option>
-                    </select>
                 </form>
             </div>
-            <div class="col d-flex align-items-start">
-                <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#agregarProyecto">Agregar usuario</button>
+            <div class="col-sm-4 ml-sm-3 ml-md-0 mb-sm-5 mb-md-3 d-flex align-items-start">
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Tipo de usuario...</option>
+                </select>
+            </div>
+            <div class="col-sm-4 mb-3 d-flex align-items-start">
+                <button type="button" class="btn btn-dark mt-3 mt-md-0 ml-auto" data-toggle="modal" data-target="#agregarProyecto">Agregar usuario</button>
             </div>
         </div>
         <div class="row my-5 align-items-center">
