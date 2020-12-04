@@ -1,10 +1,10 @@
 <!-- Modal -->
-<div class="modal fade" id="agregarProyecto" tabindex="-1" role="dialog" aria-labelledby="agregarProyectoLabel" aria-hidden="true">
+<div class="modal fade" id="modificarDatos" tabindex="-1" role="dialog" aria-labelledby="modificarDatosLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header row">
                 <div class="col-3"></div>
-                <h5 class="modal-title col-6 text-center" id="agregarProyectoLabel">Agregar proyecto</h5>
+                <h5 class="modal-title col-6 text-center" id="modificarDatosLabel">Modificar usuario</h5>
                 <div class="col-3">
 					<button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -21,69 +21,45 @@
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Fase" required>
+                                <input type="text" class="form-control" placeholder="Teléfono" required>
                             </div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col">
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFileLogotipo" required>
-                                    <label class="custom-file-label" for="customFile">Logotipo</label>
-                                </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Apellido paterno" required>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile" required>
-                                    <label class="custom-file-label" for="customFile">Video</label>
-                                </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Correo" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Eslogan" required>
+                                <input type="text" class="form-control" placeholder="Apellido materno" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Ubicación" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Precio total" required>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Manzana" required>
+                                <input type="password" class="form-control" placeholder="Contraseña" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Precio del lote" required>
+                                <input type="date" class="form-control" placeholder="Fecha de nacimiento" required>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Lote" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="Descripción" required></textarea>
-                            </div>
+                            <select class="form-control" id="exampleFormControlSelect1" disabled>
+                                <option>Tipo de usuario...</option>
+                                <option>...</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row mt-3 mb-n3 text-center">

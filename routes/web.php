@@ -94,3 +94,7 @@ Route::get('/verperfil', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/cambiarcontrasena', function () {
+    return view('cambiarContrasena');
+});

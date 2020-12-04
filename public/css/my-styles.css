@@ -447,3 +447,24 @@ html
       height: 30px;
     }
   }
+
+  /*clases del custom-card*/
+
+.custom-card
+{
+  width: 22rem;
+  margin-top: 40px;
+}
+
+/*clase del enlace para recuperar la contrasena*/
+
+.enlace-recuperar-contrasena
+{
+  color: #6c757d;
+}
+
+.enlace-recuperar-contrasena:hover
+{
+  color: #6c757d;
+  text-decoration: none;
+}

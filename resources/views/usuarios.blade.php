@@ -1,4 +1,6 @@
 @extends('plantillas/menuNavegacion')
+@extends('modales/agregarUsuario')
+@extends('modales/modificarUsuario')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
@@ -20,7 +22,7 @@
                 </select>
             </div>
             <div class="col-sm-4 mb-3 d-flex align-items-start">
-                <button type="button" class="btn btn-dark mt-3 mt-md-0 ml-auto" data-toggle="modal" data-target="#agregarProyecto">Agregar usuario</button>
+                <button type="button" class="btn btn-dark mt-3 mt-md-0 ml-auto" data-toggle="modal" data-target="#agregarUsuario">Agregar usuario</button>
             </div>
         </div>
         <div class="row my-5 align-items-center">
@@ -57,7 +59,7 @@
                             <td>
                                 <div class="d-flex flex-row">
                                     <div class="d-flex ml-n2 mr-1">
-                                        <a href="#">
+                                        <a href="#" data-toggle="modal" data-target="#modificarUsuario">
                                             <svg width="12px" height="12px" viewBox="0 0 490.7 423.1" style="enable-background:new 0 0 490.7 423.1;">
                                             <path d="M469.3,423.1H192c-11.8,0-21.3-9.6-21.3-21.3s9.6-21.3,21.3-21.3h277.3c11.8,0,21.3,9.6,21.3,21.3S481.1,423.1,469.3,423.1z
                                             M411,42.3l-30.2-30.2C364.7-4,336.6-4,320.5,12.1l-44.1,44.1l90.5,90.5l44.1-44.1c8.1-8,12.5-18.8,12.5-30.2
@@ -85,7 +87,7 @@
                             <td>
                                 <div class="d-flex flex-row">
                                     <div class="d-flex ml-n2 mr-1">
-                                        <a href="#">
+                                        <a href="#" data-toggle="modal" data-target="#modificarUsuario">
                                             <svg width="12px" height="12px" viewBox="0 0 490.7 423.1" style="enable-background:new 0 0 490.7 423.1;">
                                             <path d="M469.3,423.1H192c-11.8,0-21.3-9.6-21.3-21.3s9.6-21.3,21.3-21.3h277.3c11.8,0,21.3,9.6,21.3,21.3S481.1,423.1,469.3,423.1z
                                             M411,42.3l-30.2-30.2C364.7-4,336.6-4,320.5,12.1l-44.1,44.1l90.5,90.5l44.1-44.1c8.1-8,12.5-18.8,12.5-30.2

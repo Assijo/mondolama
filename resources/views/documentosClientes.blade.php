@@ -1,4 +1,6 @@
 @extends('plantillas/menuNavegacion')
+@extends('modales/cargarDocumentos')
+@extends('modales/cambiarDocumento')
 @section('contenido')
 
 <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
@@ -17,7 +19,7 @@
             </form>
         </div>
         <div class="col d-flex align-items-start">
-            <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#agregarProyecto">Agregar documentos</button>
+            <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#cargarDocumentos">Agregar documentos</button>
         </div>
     </div>
     <div class="row my-5 align-items-center">
@@ -26,10 +28,10 @@
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Foto del INE</th>
-                        <th scope="col">Foto del comprobante de domicilio</th>
+                        <th scope="col">INE</th>
+                        <th scope="col">Comprobante de domicilio</th>
                         <th scope="col">Foto del cliente</th>
-                        <th scope="col">Foto del contrato</th>
+                        <th scope="col">Contrato</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -41,7 +43,7 @@
                         <td>FFENVR34FS.pdf</td>
                         <td>FFENVR34FS.pdf</td>
                         <td>
-                            <a href="#"  data-toggle="modal" data-target="#modificarProyecto">
+                            <a href="#" data-toggle="modal" data-target="#cambiarDocumento">
                                 <svg width="14px"
                                 height="14px" viewBox="0 0 490.7 423.1" style="enable-background:new 0 0 490.7 423.1;">
                                 <path d="M469.3,423.1H192c-11.8,0-21.3-9.6-21.3-21.3s9.6-21.3,21.3-21.3h277.3c11.8,0,21.3,9.6,21.3,21.3S481.1,423.1,469.3,423.1z
@@ -59,7 +61,7 @@
                         <td>FFENVR34FS.pdf</td>
                         <td>FFENVR34FS.pdf</td>
                         <td>
-                            <a href="#"  data-toggle="modal" data-target="#modificarProyecto">
+                            <a href="#"  data-toggle="modal" data-target="#cambiarDocumento">
                                 <svg width="14px"
                                 height="14px" viewBox="0 0 490.7 423.1" style="enable-background:new 0 0 490.7 423.1;">
                                 <path d="M469.3,423.1H192c-11.8,0-21.3-9.6-21.3-21.3s9.6-21.3,21.3-21.3h277.3c11.8,0,21.3,9.6,21.3,21.3S481.1,423.1,469.3,423.1z
@@ -77,7 +79,7 @@
                         <td>FFENVR34FS.pdf</td>
                         <td>FFENVR34FS.pdf</td>
                         <td>
-                            <a href="#"  data-toggle="modal" data-target="#modificarProyecto">
+                            <a href="#"  data-toggle="modal" data-target="#cambiarDocumento">
                                 <svg width="14px"
                                 height="14px" viewBox="0 0 490.7 423.1" style="enable-background:new 0 0 490.7 423.1;">
                                 <path d="M469.3,423.1H192c-11.8,0-21.3-9.6-21.3-21.3s9.6-21.3,21.3-21.3h277.3c11.8,0,21.3,9.6,21.3,21.3S481.1,423.1,469.3,423.1z
