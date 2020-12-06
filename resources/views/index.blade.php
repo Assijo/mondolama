@@ -40,6 +40,19 @@
   </a>    
 </div>
 
+<div class="bg-sucess">
+@foreach($proyectos as $p)
+<div class="card">
+
+<p>{{$p->nombre}}</p>
+<img src="{{$p->logotipo}}" alt="">
+
+
+<p>{{$p->eslogan}}</p>
+</div>
+@endforeach
+
+</div>
 
 <div class="container mt-5">
     <div class="row mt-5">

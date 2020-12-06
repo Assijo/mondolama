@@ -468,3 +468,29 @@ html
   color: #6c757d;
   text-decoration: none;
 }
+
+/*clases del boton de desactivar una cuenta*/
+
+.btn-desactivar-cuenta
+{
+  background-color: #670000;
+  border-color: #670000;
+}
+
+.btn-desactivar-cuenta:hover
+{
+  background-color: #670000;
+  border-color: #670000;
+}
+
+.btn-desactivar-cuenta:focus
+{
+  background-color: #670000;
+  border-color: #670000;
+}
+
+.btn-desactivar-cuenta:active
+{
+  background-color: #670000 !important;
+  border-color: #670000 !important;
+}

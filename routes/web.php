@@ -23,6 +23,7 @@ Route::get('/mondolama', function () {
 
 Route::resource('proyectos', 'PruebaController');
 
+
 Route::get('/administrarproyectos', function () {
     return view('AdministrarProyectos');
 });
@@ -35,9 +36,7 @@ Route::get('/apartarlotes', function () {
     return view('apartarLotes');
 });
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::resource('/index','ProyectoController');
 
 Route::get('/vistaproyecto', function () {
     return view('vistaProyecto');
@@ -97,4 +96,24 @@ Route::get('/login', function () {
 
 Route::get('/cambiarcontrasena', function () {
     return view('cambiarContrasena');
+});
+
+Route::get('/verperfildesactivar', function () {
+    return view('verPerfilDesactivar');
+});
+
+Route::get('/elegirlote', function () {
+    return view('elegirLote');
+});
+
+Route::get('/verpagos', function () {
+    return view('verPagos');
+});
+
+Route::get('/verdocumentos', function () {
+    return view('verDocumentos');
+});
+
+Route::get('/verproyectos', function () {
+    return view('verProyectos');
 });

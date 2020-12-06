@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\Prueba;
+
 use Illuminate\Http\Request;
 
-class PruebaController extends Controller
+class ProyectoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,14 @@ class PruebaController extends Controller
      */
     public function index()
     {
-    
+        $proyectos =  DB::select(
+            "call sp_consultarProyectos()"
+      );
 
-        //return view('welcome');
+     
+ 
+
+        return view('index',['proyectos'=>$proyectos]);
     }
 
     /**
