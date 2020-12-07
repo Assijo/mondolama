@@ -9,16 +9,17 @@
                 <div class="card-body">
                     <h5 class="card-title mt-3 mb-4">Iniciar sesión</h5>
                     <p class="card-text">
-                        <form class="text-center">
+                        <form class="text-center" method="POST" action="{{ url('/login')}}">
+                            @csrf
                             <div class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo">
+                                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Correo">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Contraseña">
                             </div>
+                            <button type="submit" class="btn btn-dark my-3">Ingresar</button>
                         </form>
                     </p>
-                    <button type="submit" class="btn btn-dark my-3">Ingresar</button>
                 </div>
             </div>
         </div>

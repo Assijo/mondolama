@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
 
-use App\Models\Prueba;
 use Illuminate\Http\Request;
 
-class PruebaController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,6 @@ class PruebaController extends Controller
     public function index()
     {
 
-
-        //return view('welcome');
     }
 
     /**
@@ -27,7 +23,7 @@ class PruebaController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -38,29 +34,32 @@ class PruebaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        /*
+         aqui crear una variable de sesion que combine el usuario y
+          contraseña
+         y redireccionar a la pagina principal dependiendo del usuario y la sesion que se almaceno
+          */
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Prueba  $prueba
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(int $prueba)
+    public function show($id)
     {
-        $proyectos =  DB::select(
-            "call sp_consultarProyecto($prueba)"
-      );
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Prueba  $prueba
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $prueba)
+    public function edit($id)
     {
         //
     }
@@ -69,10 +68,10 @@ class PruebaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Prueba  $prueba
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prueba $prueba)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -80,10 +79,10 @@ class PruebaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Prueba  $prueba
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prueba $prueba)
+    public function destroy($id)
     {
         //
     }
