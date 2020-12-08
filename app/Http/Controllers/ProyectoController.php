@@ -58,6 +58,8 @@ class ProyectoController extends Controller
             "call sp_consultarProyecto($prueba)"
       );
     dd($proyectos);
+
+    return view('vistaProyecto',['proyecto'=>$proyectos]);
     }
 
     /**

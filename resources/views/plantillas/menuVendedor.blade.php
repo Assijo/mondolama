@@ -15,35 +15,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-lg-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Ver usuarios<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Activar/Desactivar proyectos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Ver proyectos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Ver vendedores</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Realizar pago</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@yield('menuItem6Dropdown')
-                Ver pagos
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Pagos a empleados</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Pagos de clientes</a>
-                </div>
+                <a class="nav-link" href="#">Registrar cliente<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Aprobar pagos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Ver documentos</a>
+                <a class="nav-link" href="#">Ver proyectos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Ver perfil</a>

@@ -90,7 +90,9 @@ Route::get('/verperfil', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
 Route::post('/login','LoginController@store')->middleware('registeduser');//*Login*//
+
 Route::get('/cambiarcontrasena', function () {
     return view('cambiarContrasena');
 });

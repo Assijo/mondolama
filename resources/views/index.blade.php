@@ -40,26 +40,13 @@
   </a>    
 </div>
 
-<div class="bg-sucess">
 @foreach($proyectos as $p)
-<div class="card">
-
-<p>{{$p->nombre}}</p>
-<img src="{{$p->logotipo}}" alt="">
-
-
-<p>{{$p->eslogan}}</p>
-</div>
-@endforeach
-
-</div>
-
 <div class="container mt-5">
     <div class="row mt-5">
         <div class="col-md-1">
         </div>
         <div class="col">
-            <h6><b>TITUTLO DEL PROYECTO</b></h6>
+            <h6><b>{{$p->nombre}}</b></h6>
         </div>
         <div class="col-md-1">
         </div>
@@ -70,14 +57,8 @@
         <div class="col">
           <img src="images/casas.jpg" class="img-fluid">
           <div class="p-tamano-definido mt-3">
-            Lorem ipsum dolor sit amet, in eam odio amet, vix id nullam detracto, vidit vituperatoribus duo id. Affert detraxit voluptatum vis eu, inermis eloquentiam.
-            Lorem ipsum dolor sit amet, in eam odio amet, vix id nullam detracto, vidit vituperatoribus duo id. Affert detraxit voluptatum vis eu, inermis eloquentiam.
-            Lorem ipsum dolor sit amet, in eam odio amet, vix id nullam detracto, vidit vituperatoribus duo id. Affert detraxit voluptatum vis eu, inermis eloquentiam.
-            Lorem ipsum dolor sit amet, in eam odio amet, vix id nullam detracto, vidit vituperatoribus duo id. Affert detraxit voluptatum vis eu, inermis eloquentiam.
-            Lorem ipsum dolor sit amet, in eam odio amet, vix id nullam detracto, vidit vituperatoribus duo id. Affert detraxit voluptatum vis eu, inermis eloquentiam.
-            Lorem ipsum dolor sit amet, in eam odio amet, vix id nullam detracto, vidit vituperatoribus duo id. Affert detraxit voluptatum vis eu, inermis eloquentiam.
-            Lorem ipsum dolor sit amet, in eam odio amet, vix id nullam detracto, vidit vituperatoribus duo id. Affert detraxit voluptatum vis eu, inermis eloquentiam.
-            <p class="contenedor-descripcion">.</p>
+          {{$p->descripcion}}
+          <p class="contenedor-descripcion">.</p>
           </div>
         </div>
         <div class="col-md-1">
@@ -87,8 +68,8 @@
         <div class="col-md-1">
         </div>
         <div class="col">
-            <h6><b>LOTE: $224,000.00 MXN</b></h6>
-            <h6><b>TOTAL: $3,500,000.00 MXN</b></h6>
+            <h6><b>{{$p->precio_lote}}</b></h6>
+            <h6><b>{{$p->precio}}</b></h6>
         </div>
         <div class="col-md-1">
         </div>
@@ -97,55 +78,14 @@
         <div class="col-md-1">
         </div>
         <div class="col text-center">
-            <button type="button" class="btn btn-success btn-ver mx-auto">Ver</button>
+            <a href="http://mondolama.test/vistaproyecto?={{$p->id_proyecto}}" type="button" class="btn btn-success btn-ver mx-auto">Ver</a>
         </div>
         <div class="col-md-1">
         </div>
     </div>    
 </div>
 
-<div class="container mt-5">
-    <div class="row mt-5">
-        <div class="col-md-1">
-        </div>
-        <div class="col">
-            <h6><b>TITUTLO DEL PROYECTO</b></h6>
-        </div>
-        <div class="col-md-1">
-        </div>
-    </div>
-    <div class="row mt-3 mb-5">
-        <div class="col-md-1">
-        </div>
-        <div class="col">
-            <img src="images/casas.jpg" class="img-fluid">
-            <div class="p-tamano-definido mt-3">
-              Lorem ipsum dolor sit amet, in eam odio amet, vix id nullam detracto, vidit vituperatoribus duo id. Affert detraxit voluptatum vis eu, inermis eloquentiam.
-              <p class="contenedor-descripcion">.</p>
-            </div>        </div>
-        <div class="col-md-1">
-        </div>
-    </div>
-    <div class="row mb-5">
-        <div class="col-md-1">
-        </div>
-        <div class="col">
-            <h6><b>LOTE: $224,000.00 MXN</b></h6>
-            <h6><b>TOTAL: $3,500,000.00 MXN</b></h6>
-        </div>
-        <div class="col-md-1">
-        </div>
-    </div>
-    <div class="row mb-5">
-        <div class="col-md-1">
-        </div>
-        <div class="col text-center">
-            <button type="button" class="btn btn-success btn-ver mx-auto">Ver</button>
-        </div>
-        <div class="col-md-1">
-        </div>
-    </div>    
-</div>
+@endforeach
 
 <a href="#custom-navbar" class="btn scroll-to-top ml-auto">
   <svg width="20px" height="20px" viewBox="0 0 490 490" class="svg">

@@ -20,7 +20,7 @@ class RegistredUser
         [$request->email]); //se consulta si el usuario esta en la base de datos
         if($usuariounico==null)  // si no esta redirecciona al index aqui poner una alerta
         {
-            return redirect('/index');
+            return redirect('/login');
         }
         else // sino continua a el controlador
         {
