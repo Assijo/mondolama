@@ -24,7 +24,7 @@ class RegistredUser
         }
         else // sino continua a el controlador
         {
-
+            
         }
         return $next($request);
     }

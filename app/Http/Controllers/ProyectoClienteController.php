@@ -52,14 +52,14 @@ class ProyectoController extends Controller
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function show(int $prueba)
+    public function show(int $id)
     {
         $proyectos =  DB::select(
-            "call sp_consultarProyecto($prueba)"
+            "call sp_consultarProyecto($id)"
       );
-    dd($proyectos);
-
-    return view('vistaProyecto',['proyecto'=>$proyectos]);
+    //dd($proyectos);
+      
+    return view('vistaProyecto',['proyectos'=>$proyectos]);
     }
 
     /**

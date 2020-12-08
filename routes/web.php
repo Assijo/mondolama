@@ -33,7 +33,9 @@ Route::get('/apartarlotes', function () {
     return view('apartarLotes');
 });
 
-Route::resource('/index','ProyectoController');
+Route::resource('/index','ProyectoClienteController');
+Route::resource('/administrarProyectos','ProyectoAdminController');
+Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
 
 Route::get('/vistaproyecto', function () {
     return view('vistaProyecto');

@@ -1,6 +1,6 @@
 @extends('plantillas/menuBanner')
 @section('contenido')
-@print
+@foreach($proyectos as $p)
 <div id="banner" class="banner">
     <div class="container">
         <div class="row mb-4">
@@ -10,12 +10,12 @@
         </div>
         <div class="row mb-2">
             <div class="col text-center">
-                <h2><b>{{$proyecto->nombre}}</b></h2>
+                <h2><b>{{$p->nombre}}</b></h2>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col text-center">
-                <h4><b>{{$proyecto->eslogan}}</b></h4>
+                <h4><b>{{$p->eslogan}}</b></h4>
             </div>
         </div>
         <div class="row">
@@ -26,7 +26,7 @@
                     c7.1-9.3,172.8-229.7,172.8-326.4C362.7,81.3,281.3,0,181.3,0z M181.3,277.3c-52.9,0-96-43.1-96-96s43.1-96,96-96s96,43.1,96,96
                     S234.3,277.3,181.3,277.3z"/>
                 </svg>
-                {{$proyecto->ubicacion}}
+                {{$p->ubicacion}}
             </div>
             <div class="col-sm-2 col-md-4 text-center">
                 <svg width="12px" height="12px" viewBox="0 0 400 512" class="svg">
@@ -37,7 +37,7 @@
                     C51,162.5,60.2,162.5,65.9,168.2z M431.5,329.2l-49-49c-13.8,58.7-65.4,103-127.6,105.8l-55.8,55.8l55.6,55.6
                     c123.3-2.9,222.2-94.8,239.9-210.6l-42.5,42.5C446.4,334.9,437.2,334.9,431.5,329.2L431.5,329.2z"/>
                 </svg>
-                {{$proyecto->fase}}
+                {{$p->fase}}
             </div>
             <div class="col"></div>
         </div>
@@ -117,5 +117,5 @@
     c4.2-4.2,10.9-4.2,15.1,0l234.7,234.7c4.2,4.2,4.1,10.9,0,15.1C485.4,254.9,482.7,256,479.9,256z"/>
   </svg>
 </a>
-
+@endforeach
 @endsection
