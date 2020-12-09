@@ -22,7 +22,6 @@
                 <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#agregarProyecto">Agregar proyecto</button>
             </div>
         </div>
-        @foreach($proyectos as $p)
         <div class="row my-5 align-items-center">
             <div class="col table-responsive">
                 <table class="table">
@@ -37,6 +36,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($proyectos as $p)
                         <tr>
                             <td>{{$p->nombre}}</td>
                             <td>{{$p->precio}}</td>
@@ -46,7 +46,7 @@
                             <td>
                                 <div class="d-flex flex-row">
                                     <div class="d-flex mx-1">
-                                        <a href="#"  data-toggle="modal" data-target="#modificarProyecto">
+                                        <a href="{{  url('/modificarproyecto',[$p->id_proyecto])}}"  data-toggle="modal" data-target="#modificarProyecto">
                                             <svg width="14px"
                                             height="14px" viewBox="0 0 490.7 423.1" style="enable-background:new 0 0 490.7 423.1;">
                                             <path d="M469.3,423.1H192c-11.8,0-21.3-9.6-21.3-21.3s9.6-21.3,21.3-21.3h277.3c11.8,0,21.3,9.6,21.3,21.3S481.1,423.1,469.3,423.1z
@@ -116,10 +116,10 @@
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
-        @endforeach
     </div>
 @endsection

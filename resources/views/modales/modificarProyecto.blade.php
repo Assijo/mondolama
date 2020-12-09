@@ -12,51 +12,51 @@
 				</div>
             </div>
             <div class="modal-body">
-            <form>
-                <div class="row mb-3">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Nombre">
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" placeholder="Precio del lote">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Logotipo</label>
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="{{$p->nombre}}">
+                            </div>
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="{{$p->precio_lote}}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Fase">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Eslogan">
-                    </div>
-                    <div class="col">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Video</label>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">{{$p->logotipo}}</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="{{$p->fase}}">
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <input type="number" class="form-control" placeholder="Precio total">
-                    </div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Ubicación">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <textarea class="form-control" placeholder="Descripción"></textarea>
-                    </div>
-                </div>
-            </form>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="{{$p->eslogan}}">
+                            </div>
+                            <div class="col">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">{{$p->video}}</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="{{$p->precio}}">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="{{$p->ubicacion}}">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <textarea class="form-control" placeholder="{{$p->descripcion}}"></textarea>
+                            </div>
+                        </div>
+                    </form>
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button type="button" class="btn btn-dark">Guardar</button>

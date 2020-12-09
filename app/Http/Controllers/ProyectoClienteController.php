@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
-class ProyectoController extends Controller
+class ProyectoClienteController extends Controller
 {
     /**
      * Display a listing of the resource.

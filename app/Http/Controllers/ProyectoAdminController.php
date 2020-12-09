@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
-class ProyectoController extends Controller
+class ProyectoAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -53,12 +53,7 @@ class ProyectoController extends Controller
      */
     public function show(int $id)
     {
-        $proyectos =  DB::select(
-            "call sp_consultarProyecto($id)"
-      );
-    //dd($proyectos);
-      
-    return view('administrarProyectos',['proyectos'=>$proyectos]);
+       // 
     }
 
     /**
@@ -67,9 +62,14 @@ class ProyectoController extends Controller
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $prueba)
+    public function edit(int $id)
     {
-        //
+        $proyectos =  DB::select(
+            "call sp_consultarProyecto($id)"
+      );
+    dd($proyectos);
+      
+    //return view('administrarProyectos',['proyectos'=>$proyectos]);
     }
 
     /**

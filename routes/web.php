@@ -21,9 +21,6 @@ Route::get('/mondolama', function () {
     return 'hola';
 });
 Route::resource('proyectos', 'PruebaController');
-Route::get('/administrarproyectos', function () {
-    return view('AdministrarProyectos');
-});
 
 Route::get('/administrarlotesmanzanas', function () {
     return view('administrarLotesManzanas');
@@ -34,8 +31,9 @@ Route::get('/apartarlotes', function () {
 });
 
 Route::resource('/index','ProyectoClienteController');
-Route::resource('/administrarProyectos','ProyectoAdminController');
+Route::resource('/administrarproyectos','ProyectoAdminController');
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
+Route::get('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'ProyectoAdminController@edit']);
 
 Route::get('/vistaproyecto', function () {
     return view('vistaProyecto');
