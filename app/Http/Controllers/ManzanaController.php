@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
-class ProyectoAdminController extends Controller
+class ManzanaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +15,7 @@ class ProyectoAdminController extends Controller
      */
     public function index()
     {
-        $proyectos =  DB::select(
-            "call sp_consultarProyectos()"
-      );
-
-     
-
-        return view('administrarProyectos',['proyectos'=>$proyectos]);
+        
     }
 
     /**
@@ -53,7 +47,12 @@ class ProyectoAdminController extends Controller
      */
     public function show(int $id)
     {
-       // 
+        $proyectos =  DB::select(
+            "call sp_consultarProyecto($id)"
+      );
+    //dd($proyectos);
+      
+    return view('administrarLotesManzanas',['proyectos'=>$proyectos]);
     }
 
     /**
@@ -64,12 +63,12 @@ class ProyectoAdminController extends Controller
      */
     public function edit(int $id)
     {
-        $proyectos =  DB::select(
-            "call sp_consultarProyecto($id)"
+        $manzanas =  DB::select(
+            "call sp_consultarManzanas($id)"
       );
-    //dd($proyectos);
+    //dd($manzanas);
       
-    return view('administrarProyectos',['proyectos'=>$proyectos]);
+    return view('administrarLotesManzanas',['manzanas'=>$manzanas]);
     }
 
     /**

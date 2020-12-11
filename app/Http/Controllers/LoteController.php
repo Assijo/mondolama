@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
-class ProyectoAdminController extends Controller
+class LoteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +15,7 @@ class ProyectoAdminController extends Controller
      */
     public function index()
     {
-        $proyectos =  DB::select(
-            "call sp_consultarProyectos()"
-      );
-
-     
-
-        return view('administrarProyectos',['proyectos'=>$proyectos]);
+        
     }
 
     /**
@@ -64,12 +58,12 @@ class ProyectoAdminController extends Controller
      */
     public function edit(int $id)
     {
-        $proyectos =  DB::select(
-            "call sp_consultarProyecto($id)"
+        $lotes =  DB::select(
+            "call sp_consultarLotes($id)"
       );
-    //dd($proyectos);
+    //dd($lotes);
       
-    return view('administrarProyectos',['proyectos'=>$proyectos]);
+    return view('apartarLotes',['lotes'=>$lotes]);
     }
 
     /**

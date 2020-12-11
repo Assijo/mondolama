@@ -1,7 +1,6 @@
 @extends('plantillas/menuNavegacion')
-@extends('modales/agregarFoto')
-@extends('modales/agregarProyecto')
-@extends('modales/modificarProyecto')
+@include('modales/agregarFoto')
+@include('modales/agregarProyecto')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
@@ -46,7 +45,7 @@
                             <td>
                                 <div class="d-flex flex-row">
                                     <div class="d-flex mx-1">
-                                        <a href="{{  url('/modificarproyecto',[$p->id_proyecto])}}"  data-toggle="modal" data-target="#modificarProyecto">
+                                        <a data-toggle="modal" data-target="#modificarProyecto{{ $p->id_proyecto }}">
                                             <svg width="14px"
                                             height="14px" viewBox="0 0 490.7 423.1" style="enable-background:new 0 0 490.7 423.1;">
                                             <path d="M469.3,423.1H192c-11.8,0-21.3-9.6-21.3-21.3s9.6-21.3,21.3-21.3h277.3c11.8,0,21.3,9.6,21.3,21.3S481.1,423.1,469.3,423.1z
@@ -57,7 +56,7 @@
                                         </a>
                                     </div>
                                     <div class="d-flex mx-1">
-                                        <a href="#">                                                            
+                                        <a href="#">
                                             <svg width="14px"
                                                 height="14px" viewBox="0 0 298.7 298.7" style="enable-background:new 0 0 298.7 298.7;" xml:space="preserve">
                                             <path class="st0" d="M298.7,30.2L268.5,0L149.3,119.1L30.2,0L0,30.2l119.1,119.1L0,268.5l30.2,30.2l119.1-119.1l119.1,119.1
@@ -66,7 +65,7 @@
                                         </a>
                                     </div>
                                     <div class="d-flex mx-1">
-                                        <a href="#">                                                            
+                                        <a href="#">
                                             <svg width="14px" height="14px" viewBox="0 0 512 330">
                                             <path d="M509.2,156.3C504.6,149.9,395.7,0,257,0C118.3,0,7.4,149.9,2.8,156.3c-3.8,5.2-3.8,12.3,0,17.5C7.4,180.1,118.3,330,257,330
                                                 c138.7,0,247.6-149.9,252.2-156.3C512.9,168.5,512.9,161.5,509.2,156.3z M257,270c-57.9,0-107-47.1-107-105S199.1,60,257,60
@@ -89,8 +88,14 @@
                                             </svg>
                                         </a>
                                     </div>
+                                    @if($p->precio_lote === null)
+                                    <div class="custom-control custom-switch ml-2 mt-n1">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                        <label class="custom-control-label" for="customSwitch1"></label>
+                                    </div>
+                                    @else
                                     <div class="d-flex mx-1">
-                                        <a href="#">
+                                        <a href="{{  url('/administrarlotesmanzanas',[$p->id_proyecto])}}">
                                             <svg width="14px" height="14px" viewBox="0 0 181.2 157.7">
                                             <path id="UniÃ³n_15_1_" d="M87.2,157.7c-2.3,0-4.3-1.9-4.3-4.2V117c0-0.8-0.6-1.4-1.4-1.4H55.7c-0.8,0-1.4,0.6-1.4,1.4v36.5
                                                 c0,2.3-1.9,4.2-4.3,4.2H25.7c-4.7,0-8.5-3.7-8.6-8.4V95.9h-10C3.3,96,0.1,92.9,0,89c0-1.9,0.7-3.8,2.1-5.2L65.6,24
@@ -102,7 +107,7 @@
                                         </a>
                                     </div>
                                     <div class="d-flex mx-1">
-                                        <a href="#">
+                                        <a href="{{  url('/apartarlotes',[$p->id_proyecto])}}">
                                             <svg width="14px" height="14px" viewBox="0 0 292.6 281.4">
                                             <path id="UniÃ³n_20_1_" d="M154.2,281.4c-4.2,0-7.6-3.4-7.6-7.6v-65.7c0-1.4-1.1-2.5-2.5-2.5H98.6c-1.4,0-2.5,1.1-2.5,2.5l0,0v65.7
                                                 c0,4.2-3.4,7.6-7.6,7.6h-43c-8.4,0-15.1-6.8-15.2-15.2v-96.1H12.6c-6.9,0-12.5-5.6-12.6-12.6c0-3.4,1.4-6.6,3.7-9L116.1,41
@@ -113,13 +118,16 @@
                                             </svg>
                                         </a>
                                     </div>
+                                    @endif
                                 </div>
                             </td>
                         </tr>
+                        @include('modales/modificarProyecto')
                         @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
 @endsection

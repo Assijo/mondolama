@@ -1,5 +1,5 @@
 @extends('plantillas/menuLogin')
-@extends('modales/cuentaRecuperar')
+@include('modales/cuentaRecuperar')
 @section('contenido')
 
 <div class="container">

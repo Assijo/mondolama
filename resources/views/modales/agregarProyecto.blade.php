@@ -12,7 +12,7 @@
 				</div>
             </div>
             <div class="modal-body">
-                <form>
+                <form >
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
@@ -58,25 +58,15 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Precio total" required>
+                                <input type="number" min="1" step="any" class="form-control" placeholder="Precio total/Precio del lote" required>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Manzana" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Precio del lote" required>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Lote" required>
-                            </div>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option selected>Hectárea</option>
+                                <option>Casa</option>
+                                <option>Fraccionamiento</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">

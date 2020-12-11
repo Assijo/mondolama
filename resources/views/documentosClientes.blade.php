@@ -1,6 +1,6 @@
 @extends('plantillas/menuNavegacion')
-@extends('modales/cargarDocumentos')
-@extends('modales/cambiarDocumento')
+@include('modales/cargarDocumentos')
+@include('modales/cambiarDocumento')
 @section('contenido')
 
 <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">

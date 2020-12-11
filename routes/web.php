@@ -22,22 +22,15 @@ Route::get('/mondolama', function () {
 });
 Route::resource('proyectos', 'PruebaController');
 
-Route::get('/administrarlotesmanzanas', function () {
-    return view('administrarLotesManzanas');
-});
-
-Route::get('/apartarlotes', function () {
-    return view('apartarLotes');
-});
-
 Route::resource('/index','ProyectoClienteController');
 Route::resource('/administrarproyectos','ProyectoAdminController');
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
 Route::get('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'ProyectoAdminController@edit']);
-
-Route::get('/vistaproyecto', function () {
-    return view('vistaProyecto');
-});
+Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@edit']);
+Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'LoteController@edit']);
+Route::get('/apartarlotes/{id}',['as'=>'/apartarlotes','uses'=>'ManzanaController@show']);
+Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@show']);
+Route::resource('/usuarios','UsuarioController');
 
 Route::get('/acercade', function () {
     return view('acercaDe');
@@ -70,11 +63,6 @@ Route::get('/documentosclientes', function () {
 Route::get('/proyectosactivosinactivos', function () {
     return view('proyectosActivosInactivos');
 });
-
-Route::get('/usuarios', function () {
-    return view('usuarios');
-});
-
 Route::get('/pagosaprobar', function () {
     return view('pagosAprobar');
 });
