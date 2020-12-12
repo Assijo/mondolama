@@ -23,7 +23,7 @@ Route::get('/mondolama', function () {
 Route::resource('proyectos', 'PruebaController');
 
 Route::resource('/index','ProyectoClienteController');
-Route::resource('/insertarproyecto','ProyectoAdminController');
+Route::resource('/administrarproyectos','ProyectoAdminController');
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
 Route::get('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'ProyectoAdminController@edit']);
 Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@edit']);

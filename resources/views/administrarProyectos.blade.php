@@ -1,6 +1,5 @@
 @extends('plantillas/menuNavegacion')
 @include('modales/agregarFoto')
-@include('modales/agregarProyecto')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
@@ -123,6 +122,7 @@
                             </td>
                         </tr>
                         @include('modales/modificarProyecto')
+                        @include('modales/agregarProyecto')
                         @endforeach
                     </tbody>
                 </table>

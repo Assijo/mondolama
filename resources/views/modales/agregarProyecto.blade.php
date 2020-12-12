@@ -12,7 +12,7 @@
 				</div>
             </div>
             <div class="modal-body">
-                <form action="{{ url('/insertarproyecto') }}" method="post">
+                <form action="{{ url('/insertarproyecto') }}" method="post" enctype="multipart/form-data">
                 @csrf
                     <div class="row">
                         <div class="col">
@@ -64,9 +64,9 @@
                         </div>
                         <div class="col">
                             <select class="form-control" id="id_tipo_persona" name="id_tipo_persona" id="exampleFormControlSelect1">
-                                <option selected>Hectárea</option>
-                                <option>Casa</option>
-                                <option>Fraccionamiento</option>
+                                <option selected value="1">Hectárea</option>
+                                <option value="2">Casa</option>
+                                <option value="3">Fraccionamiento</option>
                             </select>
                         </div>
                     </div>
