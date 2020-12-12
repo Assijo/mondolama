@@ -42,7 +42,10 @@ class ProyectoAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*DB::select('exec sp_insertarAgregarPoryecto(?,?,?,?,?,?,?,?,?)',array($request->nombre,$request->logotipo,$request->eslogan,$request->descripcion,$request->precio,$request->fase,$request->video,$request->ubicacion,$request->id_tipo_persona)); 
+
+        return redirect('/administrarProyectos')->with('success','Registro Exitoso');*/
+        dd($request);
     }
 
     /**

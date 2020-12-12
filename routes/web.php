@@ -23,7 +23,7 @@ Route::get('/mondolama', function () {
 Route::resource('proyectos', 'PruebaController');
 
 Route::resource('/index','ProyectoClienteController');
-Route::resource('/administrarproyectos','ProyectoAdminController');
+Route::resource('/insertarproyecto','ProyectoAdminController');
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
 Route::get('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'ProyectoAdminController@edit']);
 Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@edit']);
@@ -31,6 +31,7 @@ Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','
 Route::get('/apartarlotes/{id}',['as'=>'/apartarlotes','uses'=>'ManzanaController@show']);
 Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@show']);
 Route::resource('/usuarios','UsuarioController');
+Route::post('/insertarproyecto','ProyectoAdminController@store');
 
 Route::get('/acercade', function () {
     return view('acercaDe');

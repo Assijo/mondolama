@@ -12,16 +12,17 @@
 				</div>
             </div>
             <div class="modal-body">
-                <form >
+                <form action="{{ url('/insertarproyecto') }}" method="post">
+                @csrf
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Fase" required>
+                                <input type="text" class="form-control" id="fase" name="fase" placeholder="Fase" required>
                             </div>
                         </div>
                     </div>
@@ -29,7 +30,7 @@
                         <div class="col">
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFileLogotipo" required>
+                                    <input type="file" class="custom-file-input" id="logotipo" name="logotipo" id="customFileLogotipo" required>
                                     <label class="custom-file-label" for="customFile">Logotipo</label>
                                 </div>
                             </div>
@@ -37,7 +38,7 @@
                         <div class="col">
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile" required>
+                                    <input type="file" class="custom-file-input" id="video" name="video" id="customFile" required>
                                     <label class="custom-file-label" for="customFile">Video</label>
                                 </div>
                             </div>
@@ -46,23 +47,23 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Eslogan" required>
+                                <input type="text" class="form-control" id="eslogan" name="eslogan" placeholder="Eslogan" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Ubicación" required>
+                                <input type="text" class="form-control" id="ubicacion" name="ubicacion" placeholder="Ubicación" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="number" min="1" step="any" class="form-control" placeholder="Precio total/Precio del lote" required>
+                                <input type="number" min="1" step="any" class="form-control" id="precio" name="precio" placeholder="Precio total/Precio del lote" required>
                             </div>
                         </div>
                         <div class="col">
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <select class="form-control" id="id_tipo_persona" name="id_tipo_persona" id="exampleFormControlSelect1">
                                 <option selected>Hectárea</option>
                                 <option>Casa</option>
                                 <option>Fraccionamiento</option>
@@ -72,7 +73,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Descripción" required></textarea>
+                                <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" required></textarea>
                             </div>
                         </div>
                     </div>
