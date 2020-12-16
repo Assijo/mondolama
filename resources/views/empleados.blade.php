@@ -29,33 +29,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($empleados as $e)
                         <tr>
-                            <td>Juan Francisco Aarón Ponce FLores</td>
+                            <td>{{$e->nombre}} {{$e->ap_paterno}} {{$e->ap_materno}}</td>
+                            @if($e->id_tipo_persona === 2)
+                            <td>Administrador</td>
+                            @else
                             <td>Vendedor</td>
+                            @endif
                             <td>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Juan Francisco Aarón Ponce FLores</td>
-                            <td>Administrador</td>
-                            <td>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" checked>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Juan Francisco Aarón Ponce FLores</td>
-                            <td>Administrador</td>
-                            <td>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
-                                </div>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

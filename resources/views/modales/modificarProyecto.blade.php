@@ -12,54 +12,76 @@
 				</div>
             </div>
             <div class="modal-body">
-                    <form>
+                    <form action="{{route('administrarproyectos.update',$p->id_proyecto)}}" method="post" enctype="multipart/form-data">
+                    @method('PUT')
+                    @csrf
                         <div class="row mb-3">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="{{$p->nombre}}">
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="{{$p->nombre}}">
                             </div>
                             <div class="col">
-                                <input type="number" class="form-control" placeholder="{{$p->precio_lote}}">
+                                <input type="text" class="form-control" id="fase" name="fase" value="{{$p->fase}}">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">{{$p->logotipo}}</label>
+                                    <input type="file" class="custom-file-input" id="logotipo" name="logotipo">
+                                    <label class="custom-file-label" for="logotipo">{{$p->logotipo}}</label>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="{{$p->fase}}">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="{{$p->eslogan}}">
                             </div>
                             <div class="col">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">{{$p->video}}</label>
+                                    <input type="file" class="custom-file-input" id="video" name="video">
+                                    <label class="custom-file-label" for="video">{{$p->video}}</label>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <input type="number" class="form-control" placeholder="{{$p->precio}}">
+                                <input type="text" class="form-control" value="{{$p->eslogan}}">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="{{$p->ubicacion}}">
+                                <input type="text" class="form-control" value="{{$p->ubicacion}}">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <textarea class="form-control" placeholder="{{$p->descripcion}}"></textarea>
+                                <input type="number" class="form-control" value="{{$p->precio}}">
+                            </div>
+                            <div class="col">
+                                <select class="form-control" id="id_tipo_proyecto" name="id_tipo_proyecto" id="exampleFormControlSelect1">
+                                    @if($p->id_tipo_proyecto === 1)
+                                    <option selected value="1">Hectárea</option>
+                                    <option value="2">Casa</option>
+                                    <option value="3">Fraccionamiento</option>
+                                    @elseif($p->id_tipo_proyecto === 2)
+                                    <option value="1">Hectárea</option>
+                                    <option selected value="2">Casa</option>
+                                    <option value="3">Fraccionamiento</option>
+                                    @else
+                                    <option value="1">Hectárea</option>
+                                    <option value="2">Casa</option>
+                                    <option selected value="3">Fraccionamiento</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <textarea class="form-control" value="{{$p->descripcion}}">{{$p->descripcion}}</textarea>
+                            </div>
+                        </div>
+                        <div class="row mt-3 mb-n3 text-center">
+                            <div class="col">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-dark">Guardar</button>
+                                </div>
                             </div>
                         </div>
                     </form>
             </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-dark">Guardar</button>
+            <div class="modal-footer">
             </div>
         </div>
     </div>

@@ -20,18 +20,23 @@ Route::get('/', function () {
 Route::get('/mondolama', function () {
     return 'hola';
 });
-Route::resource('proyectos', 'PruebaController');
 
+Route::resource('proyectos', 'PruebaController');
 Route::resource('/index','ProyectoClienteController');
 Route::resource('/administrarproyectos','ProyectoAdminController');
+Route::resource('/usuarios','UsuarioController');
+Route::resource('/empleados','EmpleadoController');
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
-Route::get('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'ProyectoAdminController@edit']);
-Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@edit']);
-Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'LoteController@edit']);
+//Route::get('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'ProyectoAdminController@edit']);
+//Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@edit']);
+//Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'LoteController@edit']);
 Route::get('/apartarlotes/{id}',['as'=>'/apartarlotes','uses'=>'ManzanaController@show']);
 Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@show']);
-Route::resource('/usuarios','UsuarioController');
 Route::post('/insertarproyecto','ProyectoAdminController@store');
+Route::post('/usuarios','UsuarioController@store');
+//Route::get('/usuarios/{id}',['as'=>'/usuarios','uses'=>'UsuarioController@edit']);
+Route::get('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'FotoController']);
+
 
 Route::get('/acercade', function () {
     return view('acercaDe');
@@ -66,10 +71,6 @@ Route::get('/proyectosactivosinactivos', function () {
 });
 Route::get('/pagosaprobar', function () {
     return view('pagosAprobar');
-});
-
-Route::get('/empleados', function () {
-    return view('empleados');
 });
 
 Route::get('/verperfil', function () {

@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modificarUsuario" tabindex="-1" role="dialog" aria-labelledby="modificarUsuarioLabel" aria-hidden="true">
+<div class="modal fade" id="modificarUsuario{{$u->id_persona}}" tabindex="-1" role="dialog" aria-labelledby="modificarUsuarioLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header row">
@@ -12,53 +12,56 @@
 				</div>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="{{route('usuarios.update',$u->id_persona)}}" method="post" enctype="multipart/form-data">
+                @method('PUT')
+                @csrf
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="{{$u->nombre}}">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Teléfono" required>
+                                <input type="text" class="form-control" id="telefono" name="telefono" value="{{$u->telefono}}">
                             </div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Apellido paterno" required>
+                                <input type="text" class="form-control" id="ap_paterno" name="ap_paterno" value="{{$u->ap_paterno}}">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Correo" required>
+                                <input type="email" class="form-control" id="correo" name="correo" value="{{$u->correo}}">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Apellido materno" required>
+                                <input type="text" class="form-control" id="ap_materno" name="ap_materno" value="{{$u->ap_materno}}">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Contraseña" required>
+                                <input type="password" class="form-control" id="contrasena" name="contrasena" value="{{$u->contrasena}}">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="date" class="form-control" placeholder="Fecha de nacimiento" required>
+                                <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" value="{{$u->fecha_nacimiento}}">
                             </div>
                         </div>
                         <div class="col">
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Tipo de usuario...</option>
-                                <option>...</option>
+                            <select class="form-control" id="id_tipo_usuario" name="id_tipo_usuario" id="exampleFormControlSelect1">
+                                <option value="2" selected>Administrador</option>
+                                <option value="3">Vendedor</option>
+                                <option value="4">Cliente</option>
                             </select>
                         </div>
                     </div>

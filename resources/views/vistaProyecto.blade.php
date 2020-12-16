@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row mb-4">
             <div class="col text-center">
-                <img src="images/casa.svg" width="80px" height="80px">
+                <img width="100px" height="100px" src="{{ asset('storage/'.$p->logotipo)}}">
             </div>
         </div>
         <div class="row mb-2">
@@ -47,9 +47,9 @@
 <div class="container my-5">
     <div class="row my-5">
         <div class="col my-5">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?autoplay=1" allowfullscreen allow="autoplay; fullscreen; picture-in-picture; xr-spatial-tracking; encrypted-media"></iframe>
-            </div>
+            <video class="w-100" controls>
+                <source src="{{ asset('storage/'.$p->video)}}">
+            </video> 
         </div>
     </div>
 </div>

@@ -1,5 +1,4 @@
 @extends('plantillas/menuNavegacion')
-@include('modales/agregarFoto')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
@@ -74,7 +73,7 @@
                                         </a>
                                     </div>
                                     <div class="d-flex mx-1">
-                                        <a href="#"  data-toggle="modal" data-target="#agregarFoto">
+                                        <a data-toggle="modal" data-target="#agregarFoto{{$p->id_proyecto}}">
                                             <svg width="14px" height="14px" viewBox="0 0 1065.7 760.5">
                                             <path id="SustracciÃ³n_25_1_" d="M757.7,760.5H114.2C51.1,760.5,0,709.4,0,646.4V318.4c0-63.1,51.1-114.2,114.2-114.2h151.2
                                                 c15.4-43.5,56.6-72.6,102.8-72.5h112.2c46.2-0.1,87.4,29,102.8,72.5h96.4c9.5,102,90.6,182.6,192.6,191.6v250.5
@@ -87,12 +86,7 @@
                                             </svg>
                                         </a>
                                     </div>
-                                    @if($p->precio_lote === null)
-                                    <div class="custom-control custom-switch ml-2 mt-n1">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                        <label class="custom-control-label" for="customSwitch1"></label>
-                                    </div>
-                                    @else
+                                    @if($p->id_tipo_proyecto === 3)
                                     <div class="d-flex mx-1">
                                         <a href="{{  url('/administrarlotesmanzanas',[$p->id_proyecto])}}">
                                             <svg width="14px" height="14px" viewBox="0 0 181.2 157.7">
@@ -117,12 +111,18 @@
                                             </svg>
                                         </a>
                                     </div>
+                                    @else
+                                    <div class="custom-control custom-switch ml-2 mt-n1">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                        <label class="custom-control-label" for="customSwitch1"></label>
+                                    </div>
                                     @endif
                                 </div>
                             </td>
                         </tr>
                         @include('modales/modificarProyecto')
                         @include('modales/agregarProyecto')
+                        @include('modales/agregarFoto')
                         @endforeach
                     </tbody>
                 </table>

@@ -41,7 +41,9 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::select('call sp_insertarUsuario(?,?,?,?,?,?,?,?)',array($request->nombre,$request->ap_paterno,$request->ap_materno,$request->fecha_nacimiento,$request->telefono,$request->correo,$request->contrasena,$request->id_tipo_usuario)); 
+        
+        return redirect('/usuarios');
     }
 
     /**
@@ -61,14 +63,9 @@ class UsuarioController extends Controller
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $id)
+    public function edit(Request $request)
     {
-        /*$lotes =  DB::select(
-            "call sp_consultarLotes($id)"
-      );
-    //dd($lotes);
-      
-    return view('apartarLotes',['lotes'=>$lotes]);*/
+       //
     }
 
     /**
@@ -78,9 +75,15 @@ class UsuarioController extends Controller
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prueba $prueba)
+    public function update(Request $request, int $id)
     {
-        //
+        DB::select
+        (
+            "call sp_actualizarUsuario(?,?,?,?,?,?,?,?)", array($request->nombre,$request->ap_paterno,$request->ap_materno,$request->fecha_nacimiento,$request->telefono,$request->correo,$request->contrasena,$id)
+        );
+        //dd($request);
+        
+        return redirect('/usuarios');
     }
 
     /**

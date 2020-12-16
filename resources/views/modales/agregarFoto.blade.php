@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="agregarFoto" tabindex="-1" role="dialog" aria-labelledby="agregarFotoLabel" aria-hidden="true">
+<div class="modal fade" id="agregarFoto{{$p->id_proyecto}}" tabindex="-1" role="dialog" aria-labelledby="agregarFotoLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header row">
@@ -17,7 +17,7 @@
 						<div class="input-group mb-3">
 							<div class="customed-file">
 								<button type="button" class="btn btn-dark btn-file position-absolute">Seleccionar imágenes</button>
-								<input type="file" class="btn btn-dark position-absolute" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" multiple>
+								<input type="file" class="btn btn-dark position-absolute" id="foto" name="foto" aria-describedby="inputGroupFileAddon01" multiple>
 								<label class="customed-file-label" for="inputGroupFile01"></label>
 							</div>
 						</div>
