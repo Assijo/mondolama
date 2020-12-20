@@ -26,28 +26,30 @@
                         <div class="row mb-3">
                             <div class="col">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="logotipo" name="logotipo">
+                                    <input type="hidden" id="logotipo" name="logotipo" value="{{$p->logotipo}}">
+                                    <input type="file" class="custom-file-input">
                                     <label class="custom-file-label" for="logotipo">{{$p->logotipo}}</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="video" name="video">
+                                    <input type="hidden" id="video" name="video" value="{{$p->video}}">
+                                    <input type="file" class="custom-file-input" id="video" name="video" value="{{$p->video}}">
                                     <label class="custom-file-label" for="video">{{$p->video}}</label>
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <input type="text" class="form-control" value="{{$p->eslogan}}">
+                                <input type="text" class="form-control" id="eslogan" name="eslogan" value="{{$p->eslogan}}">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" value="{{$p->ubicacion}}">
+                                <input type="text" class="form-control" id="ubicacion" name="ubicacion" value="{{$p->ubicacion}}">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <input type="number" class="form-control" value="{{$p->precio}}">
+                                <input type="number" class="form-control" id="precio" name="precio" value="{{$p->precio}}">
                             </div>
                             <div class="col">
                                 <select class="form-control" id="id_tipo_proyecto" name="id_tipo_proyecto" id="exampleFormControlSelect1">
@@ -69,7 +71,7 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <textarea class="form-control" value="{{$p->descripcion}}">{{$p->descripcion}}</textarea>
+                                <textarea class="form-control"  id="descripcion" name="descripcion">{{$p->descripcion}}</textarea>
                             </div>
                         </div>
                         <div class="row mt-3 mb-n3 text-center">

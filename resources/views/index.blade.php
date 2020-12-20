@@ -78,7 +78,7 @@
         <div class="col-md-1">
         </div>
         <div class="col text-center">
-            <a href="{{  url('/vistaproyecto',[$p->id_proyecto])}}" type="button" class="btn btn-success btn-ver mx-auto">Ver</a>
+            <a href="{{url('/vistaproyecto',[$p->id_proyecto])}}" type="button" class="btn btn-success btn-ver mx-auto">Ver</a>
         </div> 
         <div class="col-md-1">
         </div>

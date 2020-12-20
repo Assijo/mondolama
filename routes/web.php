@@ -32,10 +32,10 @@ Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClient
 //Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'LoteController@edit']);
 Route::get('/apartarlotes/{id}',['as'=>'/apartarlotes','uses'=>'ManzanaController@show']);
 Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@show']);
-Route::post('/insertarproyecto','ProyectoAdminController@store');
+//Route::post('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'FotoController@store']);
+Route::post('/administrarproyectos','ProyectoAdminController@store');
 Route::post('/usuarios','UsuarioController@store');
 //Route::get('/usuarios/{id}',['as'=>'/usuarios','uses'=>'UsuarioController@edit']);
-Route::get('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'FotoController']);
 
 
 Route::get('/acercade', function () {

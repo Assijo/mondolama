@@ -15,14 +15,28 @@ class ProyectoAdminController extends Controller
      */
     public function index()
     {
+        $resultados = collect([]);
+
         $proyectos =  DB::select
         (
             "call sp_consultarProyectos()"
         );
 
-     
+        foreach($proyectos as $p)
+        {
+            $fotos =  DB::select
+            (
+                "call sp_consultarFotos($p->id_proyecto)"
+            );
 
-        return view('administrarProyectos',['proyectos'=>$proyectos]);
+            $resultados->offsetSet($p->id_proyecto, $fotos);
+            
+        }
+
+        //dd($resultados);
+        return view('administrarProyectos',['fotos'=>$resultados,'proyectos'=>$proyectos]);
+
+        //return view('administrarProyectos',['proyectos'=>$proyectos]);
     }
 
     /**
@@ -45,31 +59,59 @@ class ProyectoAdminController extends Controller
     {
         $file = $request->file('logotipo');
         $file2 = $request->file('video');
-        //obtenemos el nombre del archivo
-        $nombre = $file->getClientOriginalName();
-        $nombre2 = $file2->getClientOriginalName();
+        if($file != null && $file2 != null)
+        {
+            //obtenemos el nombre del archivo
+            $nombre = $file->getClientOriginalName();
+            $nombre2 = $file2->getClientOriginalName();
+            
+            //indicamos que queremos guardar un nuevo archivo en el disco local
+            \Storage::disk('local')->put($nombre,  \File::get($file));
+            \Storage::disk('local')->put($nombre2,  \File::get($file2));
+            
+
+            if($request->id_tipo_proyecto == 3)
+            {
+                DB::select
+                (
+                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$request->descripcion,null,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,$request->precio)
+                );
+            }
+            else
+            {
+                DB::select
+                (
+                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$request->descripcion,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,null)
+                ); 
+            }
+        }
         
-        //indicamos que queremos guardar un nuevo archivo en el disco local
-        \Storage::disk('local')->put($nombre,  \File::get($file));
-        \Storage::disk('local')->put($nombre2,  \File::get($file2));
+        
+        //dd($request->id);
+
+        $foto = $request->file('foto');
+        
+        if($foto != null)
+        {
+            
+            foreach($foto as $f)
+            {
+                 //obtenemos el nombre del archivo
+                $nombre = $f->getClientOriginalName();
+                //dd($f);
+                //indicamos que queremos guardar un nuevo archivo en el disco local
+                \Storage::disk('local')->put($nombre,  \File::get($f));
+
+                DB::select
+                (
+                    'call sp_insertarFoto(?,?)',array($nombre,$request->id)
+                );
+            }
+        }
         
 
-        if($request->id_tipo_proyecto == 3)
-        {
-            DB::select
-            (
-                'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$request->descripcion,null,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,$request->precio)
-            );
-        }
-        else
-        {
-            DB::select
-            (
-                'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$request->descripcion,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,null)
-            ); 
-        }
         return redirect('/administrarproyectos');
-        //dd($request);
+
     }
 
     /**

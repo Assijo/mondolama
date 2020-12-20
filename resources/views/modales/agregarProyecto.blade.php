@@ -12,7 +12,7 @@
 				</div>
             </div>
             <div class="modal-body">
-                <form action="{{ url('/insertarproyecto') }}" method="post" enctype="multipart/form-data">
+                <form action="{{url('/administrarproyectos')}}" method="post" enctype="multipart/form-data">
                 @csrf
                     <div class="row">
                         <div class="col">
@@ -38,7 +38,7 @@
                         <div class="col">
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="video" name="video" id="customFileVideo" required>
+                                    <input type="file" class="custom-file-input" id="video" name="video" required>
                                     <label class="custom-file-label" for="customFile">Video</label>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <select class="form-control" id="id_tipo_proyecto" name="id_tipo_proyecto" id="exampleFormControlSelect1">
+                            <select class="form-control" id="id_tipo_proyecto" name="id_tipo_proyecto">
                                 <option selected value="1">Hectárea</option>
                                 <option value="2">Casa</option>
                                 <option value="3">Fraccionamiento</option>
