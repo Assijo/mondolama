@@ -12,30 +12,32 @@
 				</div>
             </div>
             <div class="modal-body">
-                    <form action="{{route('administrarproyectos.update',$p->id_proyecto)}}" method="post" enctype="multipart/form-data">
-                    @method('PUT')
+                    <form action="{{url('/modificarproyectos')}}" method="post" enctype="multipart/form-data">
                     @csrf
                         <div class="row mb-3">
                             <div class="col">
+                                <input type="hidden" id="id" name="id" value="{{$p->id_proyecto}}" hidden>
                                 <input type="text" class="form-control" id="nombre" name="nombre" value="{{$p->nombre}}">
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" id="fase" name="fase" value="{{$p->fase}}">
                             </div>
+                            <input type="file" class="btn btn-dark" id="foto" name="foto" multiple>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
                                 <div class="custom-file">
-                                    <input type="hidden" id="logotipo" name="logotipo" value="{{$p->logotipo}}">
-                                    <input type="file" class="custom-file-input">
-                                    <label class="custom-file-label" for="logotipo">{{$p->logotipo}}</label>
+                                    <input type="file" class="custom-file-input" id="logotipo" name="logotipo">
+                                    <label class="custom-file-label" for="logotipo"></label>
+                                    
+                                    <input type="hidden" id="logotipo2" name="logotipo2" value="{{$p->logotipo}}" hidden>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="custom-file">
-                                    <input type="hidden" id="video" name="video" value="{{$p->video}}">
-                                    <input type="file" class="custom-file-input" id="video" name="video" value="{{$p->video}}">
-                                    <label class="custom-file-label" for="video">{{$p->video}}</label>
+                                    <input type="file" class="custom-file-input" id="video" name="video">
+                                    <label class="custom-file-label" for="video"></label>
+                                    <input type="hidden" id="video2" name="video2" value="{{$p->video}}" hidden>
                                 </div>
                             </div>
                         </div>

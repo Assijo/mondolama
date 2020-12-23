@@ -19,13 +19,14 @@
 							<div class="input-group mb-3">
 								<div class="customed-file">
 									<button type="button" class="btn btn-dark btn-file position-absolute">Seleccionar imágenes</button>
-									<input type="file" class="btn btn-dark position-absolute file" id="foto[]" name="foto[]" aria-describedby="inputGroupFileAddon01" multiple  data-show-upload="false" data-show-caption="true">
+									<input type="file" class="btn btn-dark position-absolute" id="foto[]" name="foto[]" aria-describedby="inputGroupFileAddon01" multiple>
 									<label class="customed-file-label" for="inputGroupFile01"></label>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="div-ejemplo">
+						<img id="previewImage" src="" alt="">
 					</div>
 					<div class="row row-cols-3">
 					@foreach($imagen as $imagen)

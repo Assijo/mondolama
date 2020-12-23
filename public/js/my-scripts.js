@@ -1,8 +1,20 @@
-$("#foto").fileinput
-(
+/*$(function()
+{
+    $('#foto').on('change', function()
     {
-        'showUpload' : false,
-        'previewFileType' : 'any',
-        'uploadUrl' : '/administrarProyectos'
+        var file = this.files[0];
+        var reader = new FileReader();
+        reader.onload = viewer.load;
+        reader.readAsDataURL(file);
     }
-);
+    );
+
+    var viewer = 
+    {
+        load : function(e)
+        {
+            $('#previewImage').attr('src',e.target.result);
+        }
+    }
+}
+);*/
