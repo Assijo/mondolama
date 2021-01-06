@@ -17,40 +17,49 @@
             </div>
             <div class="col-4"></div>
         </div>
-        <div class="row my-5 align-items-center">
-            <div class="col-3"></div>
-            <div class="col-sm-6 table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nombre completo</th>
-                            <th scope="col">Tipo de usuario</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($empleados as $e)
-                        <tr>
-                            <td>{{$e->nombre}} {{$e->ap_paterno}} {{$e->ap_materno}}</td>
-                            @if($e->id_tipo_persona === 2)
-                            <td>Administrador</td>
-                            @else
-                            <td>Vendedor</td>
-                            @endif
-                            <td>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                                </div>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+        <form id="empleado" method="POST" action="{{url('/empleado')}}" enctype="multipart/form-data">
+        @csrf
+            <div class="row my-5 align-items-center">
+                <div class="col-3"></div>
+                <div class="col-sm-6 table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre completo</th>
+                                <th scope="col">Tipo de usuario</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $i = 1;
+                            @endphp
+                            @foreach($empleados as $e)
+                            <tr>
+                                <td>{{$e->nombre}} {{$e->ap_paterno}} {{$e->ap_materno}}</td>
+                                @if($e->id_tipo_persona === 2)
+                                <td>Administrador</td>
+                                @else
+                                <td>Vendedor</td>
+                                @endif
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio" id="{{$i}}" value="{{$e->id_persona}}">
+                                    </div>
+                                </td>
+                            </tr>
+                            @php
+                            $i++;
+                            @endphp
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-3"></div>
             </div>
-            <div class="col-3"></div>
-        </div>
-        <div class="row my-5">
-            <button type="button" class="btn btn-dark mx-auto">Realizar pago</button>
-        </div>
+            <div class="row my-5">
+                <button type="submit" class="btn btn-dark mx-auto" onclick="actions2();">Realizar pago</button>
+            </div>
+        </form>
     </div>
 @endsection

@@ -42,21 +42,22 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        DB::select('call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?)',array($request->nombre,$request->logotipo,$request->eslogan,$request->descripcion,$request->precio,$request->fase,$request->video,$request->ubicacion,$request->id_tipo_persona)); 
-        
-        return redirect('/administrarproyectos')->with('success','Registro Exitoso');
-        //dd($request);
+        //
     }
 
     /**
      * Display the specified resource.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function show(int $id)
+    public function show(Request $request)
     {
-       // 
+        $persona = $request->radio;
+
+        return view('pagar',['persona'=>$persona]);
+        //dd($persona);
     }
 
     /**
@@ -67,12 +68,7 @@ class EmpleadoController extends Controller
      */
     public function edit(int $id)
     {
-        $proyectos =  DB::select(
-            "call sp_consultarProyecto($id)"
-      );
-    //dd($proyectos);
-      
-    return view('administrarProyectos',['proyectos'=>$proyectos]);
+        // 
     }
 
     /**

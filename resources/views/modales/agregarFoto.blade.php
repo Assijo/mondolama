@@ -31,9 +31,9 @@
 					<div class="row row-cols-3">
 					@foreach($imagen as $imagen)
 						<div class="col-4 mb-2">
-							<button type="button" class="close-reverse position-relative" aria-label="Close">
+							<!--<button type="button" class="close-reverse position-relative" aria-label="Close">
 								<span>&times;</span>
-							</button>
+							</button>-->
 							<img class="img-fluid" src="{{ asset('storage/'.$imagen->foto)}}">
 						</div>
 					@endforeach

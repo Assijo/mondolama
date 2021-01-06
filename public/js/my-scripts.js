@@ -1,20 +1,15 @@
-/*$(function()
+function actions()
 {
-    $('#foto').on('change', function()
-    {
-        var file = this.files[0];
-        var reader = new FileReader();
-        reader.onload = viewer.load;
-        reader.readAsDataURL(file);
-    }
-    );
-
-    var viewer = 
-    {
-        load : function(e)
-        {
-            $('#previewImage').attr('src',e.target.result);
-        }
-    }
+    form=document.getElementById('pago');
+    form.action='/pago';
+    form.submit();
+    form.action='https://www.sandbox.paypal.com/cgi-bin/webscr';
 }
-);*/
+
+/*function actions2()
+{
+    form=document.getElementById('empleado');
+    form.action='/empleado';
+    form.submit();
+    form.action='/pagar';
+}*/

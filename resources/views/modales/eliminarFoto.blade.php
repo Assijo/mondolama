@@ -12,7 +12,7 @@
 				</div>
 			</div>
 			<div class="modal-body">
-				<form action="{{url('/administrarproyectos')}}" method="post" enctype="multipart/form-data">
+				<form action="{{url('/eliminarfotos')}}" method="post" enctype="multipart/form-data">
 				@csrf
 				@php
 					$i = 0
@@ -21,7 +21,7 @@
 					@foreach($imagen as $imagen)
 						<div class="col-4 mb-2">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="foto{{$i}}" name="foto" value="{{ old('foto', isset($imagen->id_fotografia) ? 'checked' : '') }}">
+                            <input type="checkbox" class="custom-control-input" id="foto{{$i}}" name="foto[]" value="{{$imagen->id_fotografia}}">
 							<label class="custom-control-label" for="foto{{$i}}"></label>
                         </div>
 							<img class="img-fluid" src="{{ asset('storage/'.$imagen->foto)}}">

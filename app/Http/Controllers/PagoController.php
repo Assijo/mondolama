@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
+class PagoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,28 +15,7 @@ class LoginController extends Controller
      */
     public function index(Request $request)
     {
-        $login =  DB::select
-        (
-            'call sp_consultarLoginUsuario(?,?)',array($request->email,$request->pasword)
-        );
-        if($login != null && $login[0]->id_tipo_persona == 1 || $login[0]->id_tipo_persona == 2)
-        {
-            return redirect('/administrarproyectos');
-            //echo($login[0]->id_tipo_persona);
-        }
-        elseif($login != null && $login[0]->id_tipo_persona == 3)
-        {
-            return redirect('/pagosaprobar');
-        }
-        elseif($login != null && $login[0]->id_tipo_persona == 4)
-        {
-            return redirect('/pagarproyecto');
-        }
-        else
-        {
-            return redirect('/login');
-        }
-        
+                    
     }
 
     /**
@@ -57,12 +36,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        /*
-         aqui crear una variable de sesion que combine el usuario y
-          contraseña
-         y redireccionar a la pagina principal dependiendo del usuario y la sesion que se almaceno
-          */
+        DB::select('call sp_insertarRealizarPagoEmpresa(?,?)', array($request->idpersona,$request->monto));
     }
 
     /**

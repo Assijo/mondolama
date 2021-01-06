@@ -3,11 +3,14 @@
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
-            <div class="col-md-8"></div>
-            <div class="col-6 col-md-2 d-flex align-items-start">
+            <div class="col-md-6"></div>
+            <div class="col-4 col-md-2 d-flex align-items-start">
                 <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#modificarDatos">Modificar datos</button>
             </div>
-            <div class="col-6 col-md-2 d-flex align-items-start">
+            <div class="col-4 col-md-2 d-flex align-items-start">
+                <button type="button" class="btn btn-dark ml-auto">Cerrar sesión</button>
+            </div>
+            <div class="col-4 col-md-2 d-flex align-items-start">
                 <button type="button" class="btn btn-dark ml-auto btn-desactivar-cuenta">Desactivar cuenta</button>
             </div>
         </div>

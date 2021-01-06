@@ -21,23 +21,25 @@ Route::get('/mondolama', function () {
     return 'hola';
 });
 
+Route::match(['get', 'post'],'/pagar', function(){return view('pagar');});
+
 Route::resource('proyectos', 'PruebaController');
 Route::resource('/index','ProyectoClienteController');
 Route::resource('/administrarproyectos','ProyectoAdminController');
 Route::resource('/usuarios','UsuarioController');
 Route::resource('/empleados','EmpleadoController');
+//Route::resource('/pagar','PagoController');
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
-//Route::get('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'ProyectoAdminController@edit']);
-//Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@edit']);
-//Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'LoteController@edit']);
 Route::get('/apartarlotes/{id}',['as'=>'/apartarlotes','uses'=>'ManzanaController@show']);
 Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@show']);
-//Route::post('/administrarproyectos/{id}',['as'=>'/administrarproyectos','uses'=>'FotoController@store']);
 Route::post('/administrarproyectos','ProyectoAdminController@store');
-Route::post('/administrarproyectos','ProyectoAdminController@destroy');
+Route::post('/eliminarfotos','ProyectoAdminController@destroy');
 Route::post('/usuarios','UsuarioController@store');
 Route::post('/modificarproyectos','ProyectoAdminController@update');
-//Route::get('/usuarios/{id}',['as'=>'/usuarios','uses'=>'UsuarioController@edit']);
+Route::post('/loginadministrarproyectos','LoginController@index');
+Route::post('/pago', 'PagoController@store');
+Route::post('/empleado', 'EmpleadoController@show');
+
 
 
 Route::get('/acercade', function () {
@@ -93,8 +95,8 @@ Route::get('/verperfildesactivar', function () {
     return view('verPerfilDesactivar');
 });
 
-Route::get('/elegirlote', function () {
-    return view('elegirLote');
+Route::get('/pagarproyecto', function () {
+    return view('pagarProyecto');
 });
 
 Route::get('/verpagos', function () {

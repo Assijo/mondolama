@@ -3,9 +3,12 @@
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
-            <div class="col-10"></div>
-            <div class="col-sm-2 d-flex align-items-start">
+            <div class="col-md-8"></div>
+            <div class="col-6 col-md-2 d-flex align-items-start">
                 <button type="button" class="btn btn-dark ml-sm- ml-auto" data-toggle="modal" data-target="#modificarDatos">Modificar datos</button>
+            </div>
+            <div class="col-6 col-md-2 d-flex align-items-start">
+                <a type="button" class="btn btn-dark ml-auto" href="{{url('login')}}">Cerrar sesión</a>
             </div>
         </div>
         <div class="row my-5 align-items-center">

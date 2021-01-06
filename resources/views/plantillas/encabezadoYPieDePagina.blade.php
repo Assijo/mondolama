@@ -23,13 +23,13 @@
             <div class="container">
                 <div class="row row-cols-xs-1 row-cols-sm-2 row-cols-md-3 justify-content-around">
                     <div class="col col-md-4 justify-content-center mx-1 mx-md-0 my-2 my-md-3 text-center">
-                        <span>Políticas de privacidad</span>
+                        <span><a class="a" href="{{url('politicasprivacidad')}}">Políticas de privacidad</a></span>
                     </div>
                     <div class="col col-md-4 justify-content-center mx-1 mx-md-0 my-2 my-md-3 text-center">
-                        <span>Términos y condiciones</span>
+                        <span><a class="a" href="{{url('terminoscondiciones')}}">Términos y condiciones</a></span>
                     </div>
                     <div class="col col-md-4 justify-content-center mx-1 mx-md-0 my-2 my-md-3 text-center">
-                        <span>Acerca de nosotros</span>
+                        <span><a class="a" href="{{url('acercade')}}">Acerca de nosotros</a></span>
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
