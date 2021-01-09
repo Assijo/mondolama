@@ -15,9 +15,10 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        $empleados =  DB::select(
+        $empleados =  DB::select
+        (
             "call sp_consultarEmpleados()"
-      );
+        );
 
      
 

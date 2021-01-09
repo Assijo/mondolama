@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title mt-3 mb-4">Realizar pago</h5>
                     <p class="card-text">
-                        <form id="pago" class="text-center" method="POST" action="https://www.sandbox.paypal.com/cgi-bin/webscr" enctype="multipart/form-data">
+                        <form id="pago" class="text-center" method="POST" action="pago" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <input type="number" class="form-control" id="monto" name="monto" aria-describedby="monto" placeholder="Monto">
@@ -16,7 +16,7 @@
                             </div>
                             <!--<input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online">
                             <img width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">-->
-                            <button type="submit" class="btn btn-dark my-3" onclick="actions();">Pagar</button>
+                            <button type="submit" class="btn btn-dark my-3">Pagar</button>
                         </form>
                     </p>
                 </div>

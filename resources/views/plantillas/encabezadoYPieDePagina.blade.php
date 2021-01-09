@@ -56,6 +56,8 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/themes/fas/theme.min.js"></script>
             <!-- optionally if you need translation for your language then include the locale file as mentioned below (replace LANG.js with your language locale) -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/js/locales/LANG.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <script src="{{ asset('js/app.js') }}"></script>
             <script src="{{ asset('js/my-scripts.js') }}"></script>
     </body>

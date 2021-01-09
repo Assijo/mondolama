@@ -4,7 +4,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <nav class="navbar">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{url('index')}}">
                 <img src="images/casa.svg" width="40" height="40" alt="" loading="lazy">
             </a>
         </nav>
@@ -26,13 +26,13 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Ver pagos</a>
+                <a class="nav-link" href="{{url('verpagos')}}">Ver pagos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Ver documentos</a>
+                <a class="nav-link" href="{{url('verdocumentos')}}">Ver documentos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Ver perfil</a>
+                <a class="nav-link" href="{{url('verperfildesactivar')}}">Ver perfil</a>
             </li>
         </ul>
     </div>

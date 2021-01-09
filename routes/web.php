@@ -38,7 +38,7 @@ Route::post('/usuarios','UsuarioController@store');
 Route::post('/modificarproyectos','ProyectoAdminController@update');
 Route::post('/loginadministrarproyectos','LoginController@index');
 Route::post('/pago', 'PagoController@store');
-Route::post('/empleado', 'EmpleadoController@show');
+Route::match(['get','post'],'/empleado', 'EmpleadoController@show');
 
 
 

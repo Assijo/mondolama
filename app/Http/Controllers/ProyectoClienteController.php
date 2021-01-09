@@ -54,12 +54,22 @@ class ProyectoClienteController extends Controller
      */
     public function show(int $id)
     {
-        $proyectos =  DB::select(
+
+        $proyectos =  DB::select
+        (
             "call sp_consultarProyecto($id)"
-      );
-    //dd($proyectos);
-      
-    return view('vistaProyecto',['proyectos'=>$proyectos]);
+        );
+
+        //dd($proyectos);
+
+        $idproyecto = $proyectos[0]->id_proyecto;
+
+        $fotos =  DB::select
+        (
+            "call sp_consultarFotos($idproyecto)"
+        );
+    
+        return view('vistaProyecto',['fotos'=>$fotos, 'proyectos'=>$proyectos]);
     }
 
     /**

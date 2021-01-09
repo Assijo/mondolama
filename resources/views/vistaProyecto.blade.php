@@ -43,7 +43,7 @@
         </div>
     </div>
 </div>
-
+            
 <div class="container my-5">
     <div class="row my-5">
         <div class="col my-5">
@@ -55,17 +55,25 @@
 </div>
 
 <div class="container">
-    <div id="carouselExampleControls" class="carousel slide mb-5" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/unsplash1.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/unsplash2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/unsplash3.jpg" class="d-block w-100" alt="...">
-            </div>
+            @php
+                $i = 0;
+            @endphp
+            @foreach($fotos as $fotos)
+                @if($i === 0)
+                    <div class="carousel-item active">
+                        <img src="{{asset('storage/'.$fotos->foto)}}" class="d-block w-100">
+                    </div>
+                @else
+                    <div class="carousel-item">
+                        <img src="{{asset('storage/'.$fotos->foto)}}" class="d-block w-100">
+                    </div>
+                @endif
+                @php
+                    $i ++;
+                @endphp
+            @endforeach
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -81,32 +89,20 @@
 <div class="container mb-5">
     <div class="row my-5">
         <div class="col">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi leo urna molestie at 
-                elementum eu. Tristique risus nec feugiat in fermentum. Porta lorem mollis aliquam ut porttitor leo. Id donec ultrices tincidunt arcu non sodales neque 
-                sodales ut. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Eu scelerisque felis imperdiet proin fermentum. Etiam erat velit scelerisque in 
-                dictum non consectetur a erat. Pretium lectus quam id leo in. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Lectus urna duis convallis 
-                convallis. Habitant morbi tristique senectus et netus. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. In nibh mauris cursus mattis molestie. 
-                Mattis molestie a iaculis at erat pellentesque adipiscing. Vitae justo eget magna fermentum. Nullam eget felis eget nunc.
-            </p>
-            <p>
-                Vitae congue eu consequat ac felis donec et odio. Iaculis urna id volutpat lacus. Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. 
-                Aliquam malesuada bibendum arcu vitae. Laoreet id donec ultrices tincidunt arcu non sodales neque. Purus ut faucibus pulvinar elementum integer enim 
-                neque. Integer eget aliquet nibh praesent tristique magna sit. Fringilla ut morbi tincidunt augue interdum velit. Porttitor rhoncus dolor purus non enim 
-                praesent. Ipsum nunc aliquet bibendum enim facilisis gravida. Bibendum ut tristique et egestas quis ipsum suspendisse. Ornare quam viverra orci sagittis. 
-                Adipiscing commodo elit at imperdiet dui accumsan. Vestibulum sed arcu non odio euismod. Sit amet nisl purus in. Tellus cras adipiscing enim eu turpis 
-                egestas pretium. Vulputate ut pharetra sit amet aliquam id diam.
-            </p>
+            {{$p->descripcion}}
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h6><b>LOTE: $224,000.00 MXN</b></h6>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h6><b>TOTAL: $3,500,000.00 MXN</b></h6>
+            <h6>
+                <b>
+                    @if($p->precio === null)
+                    PRECIO: ${{$p->precio_lote}} MXN
+                    @else
+                    PRECIO DEL LOTE: ${{$p->precio}} MXN
+                    @endif
+                </b>
+            </h6>
         </div>
     </div>
 </div>

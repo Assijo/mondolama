@@ -3,7 +3,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <nav class="navbar">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{url('index')}}">
                 <img src="images/casa.svg" width="40" height="40" alt="" loading="lazy">
             </a>
         </nav>
@@ -19,6 +19,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('proyectosactivosinactivos')}}">Activar/Desactivar proyectos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('administrarproyectos')}}">Administrar proyectos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('verproyectos')}}">Ver proyectos</a>
