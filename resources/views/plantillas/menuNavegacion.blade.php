@@ -4,7 +4,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <nav class="navbar">
             <a class="navbar-brand" href="{{url('index')}}">
-                <img src="images/casa.svg" width="40" height="40" alt="" loading="lazy">
+                <img src="images/hoja.svg" width="40" height="40" alt="" loading="lazy">
             </a>
         </nav>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

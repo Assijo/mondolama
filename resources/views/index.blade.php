@@ -11,8 +11,8 @@
     <div class="carousel-item active">
       <img src="images/unsplash6.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h5>El comienso es hoy</h5>
+        <p>Vive Puerto Vallarta</p>
       </div>
     </div>
     <div class="carousel-item">
