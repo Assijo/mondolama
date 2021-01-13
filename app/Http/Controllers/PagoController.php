@@ -47,9 +47,9 @@ class PagoController extends Controller
         $paypal_currency = "MXN";
         $paypal_cursymbol = "&mxn";
         $paypal_location = "MX";
-        $paypal_returnurl = "http://mondolama.test/empleados";
+        $paypal_returnurl = "http://mondolama.vxasandbox.com/empleados";
         $paypal_returntxt = "Pago Realizado Exitosamente!";
-        $paypal_cancelurl = "http://mondolama.test/empleados";
+        $paypal_cancelurl = "http://mondolama.vxasandbox.com/empleados";
 
         $ppurl = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_cart";
         $ppurl .= "&business=".$paypal_business;
