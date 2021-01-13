@@ -13,6 +13,7 @@
 			</div>
 			<div class="modal-body">
 				<form action="{{url('/eliminarproyecto')}}" method="post" enctype="multipart/form-data">
+				@csrf
 					<div class="row row-cols-3">
 						<div class="col-4 mb-2">
                             <p>¿Esta seguuro de que desea eliminar este proyecto?</p>
