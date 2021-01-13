@@ -30,7 +30,7 @@
                 <a class="nav-link" href="{{url('vendedoresproyectos')}}">Ver vendedores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('realizarpagos')}}">Realizar pago</a>
+                <a class="nav-link" href="{{url('empleados')}}">Realizar pago</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
