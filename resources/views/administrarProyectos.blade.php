@@ -128,11 +128,11 @@
                                             </svg>
                                         </a>
                                     </div>
-                                    @else
+                                    <!--@else
                                     <div class="custom-control custom-switch ml-2 mt-n1">
                                         <input type="checkbox" class="custom-control-input" id="customSwitch1">
                                         <label class="custom-control-label" for="customSwitch1"></label>
-                                    </div>
+                                    </div>-->
                                     @endif
                                 </div>
                             </td>
