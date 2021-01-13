@@ -97,12 +97,17 @@ class ProyectoClienteController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prueba $prueba)
+    public function destroy(Request $request)
     {
-        //
+        DB::select
+        (
+            "call sp_eliminarProyecto($request->idproyecto)"
+        );
+
+        return redirect('/administrarproyectos');
     }
 }
