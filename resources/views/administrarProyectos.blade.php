@@ -57,7 +57,7 @@
                                         </a>
                                     </div>
                                     <div class="d-flex mx-1">
-                                        <a href="#">
+                                        <a data-toggle="modal" data-target="#eliminarProyecto{{$p->id_proyecto}}">
                                             <svg width="14px"
                                                 height="14px" viewBox="0 0 298.7 298.7" style="enable-background:new 0 0 298.7 298.7;" xml:space="preserve">
                                             <path class="st0" d="M298.7,30.2L268.5,0L149.3,119.1L30.2,0L0,30.2l119.1,119.1L0,268.5l30.2,30.2l119.1-119.1l119.1,119.1
@@ -66,7 +66,7 @@
                                         </a>
                                     </div>
                                     <div class="d-flex mx-1">
-                                        <a href="#">
+                                        <a href="{{url('/vistaproyecto',[$p->id_proyecto])}}">
                                             <svg width="14px" height="14px" viewBox="0 0 512 330">
                                             <path d="M509.2,156.3C504.6,149.9,395.7,0,257,0C118.3,0,7.4,149.9,2.8,156.3c-3.8,5.2-3.8,12.3,0,17.5C7.4,180.1,118.3,330,257,330
                                                 c138.7,0,247.6-149.9,252.2-156.3C512.9,168.5,512.9,161.5,509.2,156.3z M257,270c-57.9,0-107-47.1-107-105S199.1,60,257,60

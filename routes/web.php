@@ -34,6 +34,7 @@ Route::get('/apartarlotes/{id}',['as'=>'/apartarlotes','uses'=>'ManzanaControlle
 Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@show']);
 Route::post('/administrarproyectos','ProyectoAdminController@store');
 Route::post('/eliminarfotos','ProyectoAdminController@destroy');
+Route::post('/eliminarproyecto','ProyectoClienteController@destroy');
 Route::post('/usuarios','UsuarioController@store');
 Route::post('/modificarproyectos','ProyectoAdminController@update');
 Route::post('/loginadministrarproyectos','LoginController@index');
