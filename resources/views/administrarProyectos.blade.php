@@ -141,6 +141,7 @@
                         @include('modales/agregarProyecto')
                         @include('modales/agregarFoto')
                         @include('modales/eliminarFoto')
+                        @include('modales/eliminarProyecto')
                         @endforeach
                     </tbody>
                 </table>
