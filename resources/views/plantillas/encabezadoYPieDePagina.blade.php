@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
-                    <span>MONDOLAMA 2020 &#169;</span>
+                    <span>MONDOLAMA 2021 &#169;</span>
                 </div>
             </div>
             </footer>
@@ -61,4 +61,4 @@
             <script src="{{ asset('js/app.js') }}"></script>
             <script src="{{ asset('js/my-scripts.js') }}"></script>
     </body>
-</html>
+</html>4
