@@ -61,4 +61,4 @@
             <script src="{{ asset('js/app.js') }}"></script>
             <script src="{{ asset('js/my-scripts.js') }}"></script>
     </body>
-</html>4
+</html>
