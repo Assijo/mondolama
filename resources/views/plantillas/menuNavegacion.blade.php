@@ -46,7 +46,7 @@
                 <a class="nav-link" href="{{url('pagosaprobar')}}">Aprobar pagos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('verdocumentos')}}">Ver documentos</a>
+                <a class="nav-link" href="{{url('verdocumentosadmin')}}">Ver documentos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('verperfil')}}">Ver perfil</a>
