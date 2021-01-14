@@ -19,18 +19,21 @@ class LoginController extends Controller
         (
             'call sp_consultarLoginUsuario(?,?)',array($request->email,$request->pasword)
         );
-        if($login != null && $login[0]->id_tipo_persona == 1 || $login[0]->id_tipo_persona == 2)
+        if($login != null)
         {
-            return redirect('/administrarproyectos');
-            //echo($login[0]->id_tipo_persona);
-        }
-        elseif($login != null && $login[0]->id_tipo_persona == 3)
-        {
-            return redirect('/pagosaprobar');
-        }
-        elseif($login != null && $login[0]->id_tipo_persona == 4)
-        {
-            return redirect('/pagarproyecto');
+            if($login[0]->id_tipo_persona == 1 || $login[0]->id_tipo_persona == 2)
+            {
+                return redirect('/administrarproyectos');
+                //echo($login[0]->id_tipo_persona);
+            }
+            elseif($login[0]->id_tipo_persona == 3)
+            {
+                return redirect('/pagosaprobar');
+            }
+            elseif($login[0]->id_tipo_persona == 4)
+            {
+                return redirect('/pagarproyecto');
+            }
         }
         else
         {
