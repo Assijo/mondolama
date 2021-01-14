@@ -14,15 +14,15 @@
 			<div class="modal-body">
 				<form action="{{url('/eliminarproyecto')}}" method="post" enctype="multipart/form-data">
 				@csrf
-					<div class="row row-cols-3">
-						<div class="col-4 mb-2">
+					<div class="row">
+						<div class="col text-center">
                             <p>¿Esta seguuro de que desea eliminar este proyecto?</p>
                             <input type="hidden" name="idproyecto" value="{{$p->id_proyecto}}">
 					    </div>
 					</div>
 					<div class="row mt-3 mb-n3 text-center">
 						<div class="form-group">
-							<div class="row">
+							<div class="row text-center">
 								<div class="col-6 text-center">
 									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 								</div>
