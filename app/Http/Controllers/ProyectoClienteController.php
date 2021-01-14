@@ -33,8 +33,8 @@ class ProyectoClienteController extends Controller
             
         }  
 
-        //dd($resultados);
-        return view('index',['fotos'=>$resultados,'proyectos'=>$proyectos]);
+        dd($resultados);
+        //return view('index',['fotos'=>$resultados,'proyectos'=>$proyectos]);
     }
 
     /**
