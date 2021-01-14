@@ -20,12 +20,12 @@
                             <input type="hidden" name="idproyecto" value="{{$p->id_proyecto}}">
 					    </div>
 					</div>
-					<div class="row mt-3 mb-n3 text-center">
+					<div class="row mt-3 mb-n3">
 						<div class="form-group form-inline">
-							<div class="col-6 text-center">
+							<div class="col-6">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 							</div>
-							<div class="col-6 text-center">
+							<div class="col-6">
 								<button type="submit" class="btn btn-dark" name="id" value="{{$p->id_proyecto}}">Eliminar</button>
 							</div>
 						</div>
