@@ -21,7 +21,7 @@
 					    </div>
 					</div>
 					<div class="row mt-3 mb-n3 text-center">
-						<div class="form-group">
+						<div class="form-group form-inline">
 							<div class="col-6 text-center">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 							</div>
