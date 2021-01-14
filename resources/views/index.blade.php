@@ -55,15 +55,7 @@
         <div class="col-md-1">
         </div>
         <div class="col">
-          <!--@php
-            $imagen=$fotos[$p->id_proyecto];
-          @endphp
-          @foreach($imagen as $imagen)
-            @if($loop->first)-->
-            <img src="{{ asset('storage/'.$imagen->foto)}}" class="img-fluid">
-            <!--@else
-            @endif
-          @endforeach-->
+            <img src="images/casas.jpg" class="img-fluid">
           <div class="p-tamano-definido mt-3">
           {{$p->descripcion}}
           <p class="contenedor-descripcion">.</p>
