@@ -23,7 +23,7 @@
 	
 					<div class="form-group form-inline">
 						<div class="row mt-3 mb-n3">
-							<div class="col">
+							<div class="col ml-auto">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 							</div>
 							<div class="col">
