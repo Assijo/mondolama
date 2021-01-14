@@ -20,9 +20,9 @@
                             <input type="hidden" name="idproyecto" value="{{$p->id_proyecto}}">
 					    </div>
 					</div>
-					<div class="row mt-3 mb-n3">
-						<div class="form-group form-inline">
-							<div class="col-6"></div>
+	
+					<div class="form-group form-inline">
+						<div class="row mt-3 mb-n3">
 							<div class="col">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 							</div>
