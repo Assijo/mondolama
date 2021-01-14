@@ -56,7 +56,7 @@
         </div>
         <div class="col">
           @php
-            $imagen = $fotos[$p->id_proyecto];
+            $imagen=$fotos[$p->id_proyecto];
           @endphp
           @foreach($imagen as $imagen)
             @if($loop->first)
