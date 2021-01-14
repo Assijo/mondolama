@@ -22,10 +22,11 @@
 					</div>
 					<div class="row mt-3 mb-n3">
 						<div class="form-group form-inline">
-							<div class="col-6">
+							<div class="col-6"></div>
+							<div class="col">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 							</div>
-							<div class="col-6">
+							<div class="col">
 								<button type="submit" class="btn btn-dark" name="id" value="{{$p->id_proyecto}}">Eliminar</button>
 							</div>
 						</div>
