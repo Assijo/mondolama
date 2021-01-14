@@ -22,13 +22,11 @@
 					</div>
 					<div class="row mt-3 mb-n3 text-center">
 						<div class="form-group">
-							<div class="row text-center">
-								<div class="col-6 text-center">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-								</div>
-								<div class="col-6 text-center">
-									<button type="submit" class="btn btn-dark" name="id" value="{{$p->id_proyecto}}">Eliminar</button>
-								</div>
+							<div class="col-6 text-center">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+							</div>
+							<div class="col-6 text-center">
+								<button type="submit" class="btn btn-dark" name="id" value="{{$p->id_proyecto}}">Eliminar</button>
 							</div>
 						</div>
                     </div>
