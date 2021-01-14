@@ -15,14 +15,14 @@ class ProyectoClienteController extends Controller
      */
     public function index()
     {
-        $resultados = collect([]);
+        //$resultados = collect([]);
 
         $proyectos =  DB::select
         (
             "call sp_consultarProyectos()"
         );
 
-        foreach($proyectos as $p)
+        /*foreach($proyectos as $p)
         {
             $fotos =  DB::select
             (
@@ -31,10 +31,10 @@ class ProyectoClienteController extends Controller
 
             $resultados->offsetSet($p->id_proyecto, $fotos);
             
-        }  
+        }*/  
 
         //dd($resultados);
-        return view('index',['fotos'=>$resultados,'proyectos'=>$proyectos]);
+        return view('index',['proyectos'=>$proyectos]);
     }
 
     /**
