@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row mb-4">
             <div class="col text-center">
-                <img src="images/logo.svg" width="200px" height="200px">
+                <img src="images/hoja.svg" width="200px" height="200px">
             </div>
         </div>
     </div>
