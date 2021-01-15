@@ -14,11 +14,7 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/mondolama', function () {
-    return 'hola';
+    return view('index');
 });
 
 Route::match(['get', 'post'],'/pagar', function(){return view('pagar');});
