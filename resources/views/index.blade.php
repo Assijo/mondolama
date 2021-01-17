@@ -55,7 +55,7 @@
         <div class="col-md-1">
         </div>
         <div class="col">
-            <img src="images/casas.jpg" class="img-fluid">
+            <img src="images/casas.jpg" class="img-fluid wow animate__slideInUp animate__delay-5s">
           <div class="p-tamano-definido mt-3">
           {{$p->descripcion}}
           <p class="contenedor-descripcion">.</p>
@@ -78,7 +78,7 @@
         <div class="col-md-1">
         </div>
         <div class="col text-center">
-            <a href="{{url('/vistaproyecto',[$p->id_proyecto])}}" type="button" class="btn btn-success btn-ver mx-auto">Ver</a>
+            <a href="{{url('/vistaproyecto',[$p->id_proyecto])}}" type="button" class="btn btn-success btn-ver mx-auto wow fadeInDown">Ver</a>
         </div> 
         <div class="col-md-1">
         </div>
