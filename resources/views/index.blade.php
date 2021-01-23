@@ -40,52 +40,59 @@
   </a>
 </div>
 
-@foreach($proyectos as $p)
+
 <div class="container mt-5">
-    <div class="row mt-5">
-        <div class="col-md-1">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="row row-cols-3">
+            @foreach($proyectos as $p)
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                        <h6><b>{{$p->nombre}}</b></h6>
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-5">
+                        <div class="col wow animate__slideInUp animate__delay-5s">
+                            <img src="images/casas.jpg" class="img-fluid">
+                            <div class="p-tamano-definido mt-3">
+                                {{$p->descripcion}}
+                                <p class="contenedor-descripcion">
+                                    .
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col">
+                        @if($p->precio === null)
+                            <h6>
+                                <b>
+                                    Precio por lote: ${{$p->precio_lote}} MXN
+                                </b>
+                            </h6>
+                        @else
+                            <h6>
+                                <b>
+                                    Precio: ${{$p->precio}} MXN
+                                </b>
+                            </h6>
+                        @endif
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col text-center wow fadeInDown">
+                            <a href="{{url('/vistaproyecto',[$p->id_proyecto])}}" type="button" class="btn btn-ver mx-auto">Ver</a>
+                        </div> 
+                    </div>
+                </div>
+            @endforeach
         </div>
-        <div class="col">
-            <h6><b>{{$p->nombre}}</b></h6>
-        </div>
-        <div class="col-md-1">
-        </div>
-    </div>
-    <div class="row mt-3 mb-5">
-        <div class="col-md-1">
-        </div>
-        <div class="col">
-            <img src="images/casas.jpg" class="img-fluid wow animate__slideInUp animate__delay-5s">
-          <div class="p-tamano-definido mt-3">
-          {{$p->descripcion}}
-          <p class="contenedor-descripcion">.</p>
-          </div>
-        </div>
-        <div class="col-md-1">
-        </div>
-    </div>
-    <div class="row mb-5">
-        <div class="col-md-1">
-        </div>
-        <div class="col">
-            <h6><b>{{$p->precio_lote}}</b></h6>
-            <h6><b>{{$p->precio}}</b></h6>
-        </div>
-        <div class="col-md-1">
-        </div>
-    </div>
-    <div class="row mb-5">
-        <div class="col-md-1">
-        </div>
-        <div class="col text-center">
-            <a href="{{url('/vistaproyecto',[$p->id_proyecto])}}" type="button" class="btn btn-success btn-ver mx-auto wow fadeInDown">Ver</a>
-        </div> 
-        <div class="col-md-1">
-        </div>
+        <div class="col-md-1"></div>
     </div>    
 </div>
 
-@endforeach
+
 
 <a href="#custom-navbar" class="btn scroll-to-top ml-auto">
   <svg width="20px" height="20px" viewBox="0 0 490 490" class="svg">
