@@ -1,7 +1,7 @@
 @extends('plantillas/encabezadoYPieDePagina')
 @section('menu')
 <nav id="custom-navbar" class="navbar navbar-expand-sm custom-navbar-transparente">
-    <nav class="navbar">
+  <nav class="navbar">
       <a class="navbar-brand" href="{{url('index')}}">
           <img src="images/hoja.svg" width="60" height="60" alt="" loading="lazy">
       </a>
