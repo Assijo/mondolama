@@ -22,16 +22,7 @@ class ProyectoClienteController extends Controller
             "call sp_consultarProyectos()"
         );
 
-        /*foreach($proyectos as $p)
-        {
-            $fotos =  DB::select
-            (
-                "call sp_consultarFotos($p->id_proyecto)"
-            );
-
-            $resultados->offsetSet($p->id_proyecto, $fotos);
-            
-        }*/  
+        
 
         //dd($resultados);
         return view('index',['proyectos'=>$proyectos]);

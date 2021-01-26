@@ -88,7 +88,7 @@
 
 <div class="container mb-5">
     <div class="row my-5">
-        <div class="col">
+        <div class="col p-descripcion">
             {{$p->descripcion}}
         </div>
     </div>

@@ -411,6 +411,12 @@ body
   margin-bottom: 0; 
 }
 
+/*clase de losparrafos de la descripcion*/
+.p-descripcion
+{
+  overflow: hidden;
+}
+
 /*clase del banner*/
 
 .banner

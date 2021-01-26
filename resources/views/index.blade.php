@@ -54,7 +54,7 @@
                     </div>
                     <div class="row mt-3 mb-5">
                         <div class="col wow animate__slideInUp animate__delay-5s">
-                            <img src="images/casas.jpg" class="img-fluid">
+                            <img src="{{asset('storage/'.$p->imagen_principal)}}" class="img-fluid">
                             <div class="p-tamano-definido mt-3">
                                 {{$p->descripcion}}
                                 <p class="contenedor-descripcion">

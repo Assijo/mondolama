@@ -104,7 +104,7 @@
                                             </svg>
                                         </a>
                                     </div>
-                                    @if($p->id_tipo_proyecto === 3)
+                                    <!--@if($p->id_tipo_proyecto === 3)
                                     <div class="d-flex mx-1">
                                         <a href="{{  url('/administrarlotesmanzanas',[$p->id_proyecto])}}">
                                             <svg width="14px" height="14px" viewBox="0 0 181.2 157.7">
@@ -130,11 +130,11 @@
                                         </a>
                                     </div>
                                     @else
-                                    <!--<div class="custom-control custom-switch ml-2 mt-n1">
+                                    <div class="custom-control custom-switch ml-2 mt-n1">
                                         <input type="checkbox" class="custom-control-input" id="customSwitch1">
                                         <label class="custom-control-label" for="customSwitch1"></label>
-                                    </div>-->
-                                    @endif
+                                    </div>
+                                    @endif-->
                                 </div>
                             </td>
                         </tr>
@@ -148,5 +148,120 @@
             </div>
         </div>
     </div>
+
+    <script>
+        window.onload = function() {
+
+
+            $('#descripcion').richText({
+                // text formatting
+                bold: true,
+                italic: true,
+                underline: true,
+
+                // text alignment
+                leftAlign: true,
+                centerAlign: true,
+                rightAlign: true,
+                justify: true,
+
+                // lists
+                ol: false,
+                ul: false,
+
+                // title
+                heading: true,
+
+                // fonts
+                fonts: false,
+
+                fontColor: false,
+                fontSize: false,
+
+                // uploads
+                imageUpload: false,
+
+                fileUpload: false,
+
+
+                // media
+                videoEmbed: false,
+                // link
+                urls: false,
+
+                // tables
+                table: false,
+
+                // code
+                removeStyles: false,
+                code: false,
+
+                translations: {
+                    'title': 'Titulo',
+                    'white': 'Blanco',
+                    'black': 'Negro',
+                    'brown': 'Café',
+                    'beige': 'Beige',
+                    'darkBlue': 'Azul Oscuro',
+                    'blue': 'Blue',
+                    'lightBlue': 'Light Blue',
+                    'darkRed': 'Dark Red',
+                    'red': 'Rojo',
+                    'darkGreen': 'Dark Green',
+                    'green': 'Green',
+                    'purple': 'Purple',
+                    'darkTurquois': 'Dark Turquois',
+                    'turquois': 'Turquois',
+                    'darkOrange': 'Dark Orange',
+                    'orange': 'Orange',
+                    'yellow': 'Yellow',
+                    'imageURL': 'Image URL',
+                    'fileURL': 'File URL',
+                    'linkText': 'Link text',
+                    'url': 'URL',
+                    'size': 'Size',
+                    'responsive': 'Responsive',
+                    'text': 'Texto',
+                    'openIn': 'Open in',
+                    'sameTab': 'Same tab',
+                    'newTab': 'New tab',
+                    'align': 'Alinear',
+                    'left': 'Izquierda',
+                    'justify': 'Justificar',
+                    'center': 'Centro',
+                    'right': 'Derecho',
+                    'rows': 'Rows',
+                    'columns': 'Columns',
+                    'add': 'Add',
+                    'pleaseEnterURL': 'Please enter an URL',
+                    'videoURLnotSupported': 'Video URL not supported',
+                    'pleaseSelectImage': 'Please select an image',
+                    'pleaseSelectFile': 'Please select a file',
+                    'bold': 'Negritas',
+                    'italic': 'Itálica',
+                    'underline': 'Subrayado',
+                    'alignLeft': 'Alinear Izquierda',
+                    'alignCenter': 'Alinear Centro',
+                    'alignRight': 'Alinear Derecha',
+                    'addOrderedList': 'Add ordered list',
+                    'addUnorderedList': 'Add unordered list',
+                    'addHeading': 'Agrgar Encabezado/Titulo',
+                    'addFont': 'Add font',
+                    'addFontColor': 'Add font color',
+                    'addFontSize': 'Add font size',
+                    'addImage': 'Add image',
+                    'addVideo': 'Add video',
+                    'addFile': 'Add file',
+                    'addURL': 'Add URL',
+                    'addTable': 'Add table',
+                    'removeStyles': 'Remove styles',
+                    'code': 'Show HTML code',
+                    'undo': 'Undo',
+                    'redo': 'Redo',
+                    'close': 'Close'
+                },
+            });
+        }
+    </script>
 
 @endsection

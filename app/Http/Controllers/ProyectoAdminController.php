@@ -59,30 +59,35 @@ class ProyectoAdminController extends Controller
     {
         $file = $request->file('logotipo');
         $file2 = $request->file('video');
+        $file3 = $request->file('imagen');
         
-        if($file != null && $file2 != null)
+        $descripcion = nl2br(htmlentities($request->descripcion, ENT_QUOTES, 'UTF-8'));
+
+        if($file != null && $file2 != null && $file3 != null)
         {
             //obtenemos el nombre del archivo
             $nombre = $file->getClientOriginalName();
             $nombre2 = $file2->getClientOriginalName();
+            $nombre3 = $file3->getClientOriginalName();
             
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombre,  \File::get($file));
             \Storage::disk('local')->put($nombre2,  \File::get($file2));
+            \Storage::disk('local')->put($nombre3,  \File::get($file3));
             
 
             if($request->id_tipo_proyecto == 3)
             {
                 DB::select
                 (
-                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$request->descripcion,null,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,$request->precio)
+                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$descripcion,null,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,$request->precio,$nombre3)
                 );
             }
             else
             {
                 DB::select
                 (
-                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$request->descripcion,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,null)
+                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$descripcion,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,null,$nombre3)
                 ); 
             }
         }
@@ -148,30 +153,84 @@ class ProyectoAdminController extends Controller
     {
         $file = $request->file('logotipo');
         $file2 = $request->file('video');
+        $file3 = $request->file('imagen');
 
-        if($file != null && $file2 != null)
+        if($file == null)
+        {
+            $logovideo = DB::select("call sp_consultarLogoVideoImagenProyecto($request->id)");
+            $nombre = $logovideo[0]->logotipo;
+        }
+        else
+        {
+            $nombre = $file->getClientOriginalName();
+
+            \Storage::disk('local')->put($nombre,  \File::get($file));
+        }
+
+        if($file2 == null)
+        {
+            $logovideo = DB::select("call sp_consultarLogoVideoImagenProyecto($request->id)");
+            $nombre2 = $logovideo[0]->video;
+        }
+        else
+        {
+            $nombre2 = $file2->getClientOriginalName();
+
+            \Storage::disk('local')->put($nombre2,  \File::get($file2));
+        }
+
+        if($file3 == null)
+        {
+            $logovideo = DB::select("call sp_consultarLogoVideoImagenProyecto($request->id)");
+            $nombre3 = $logovideo[0]->imagen_principal;
+        }
+        else
+        {
+            $nombre3 = $file3->getClientOriginalName();
+
+            \Storage::disk('local')->put($nombre3,  \File::get($file3));
+        }
+
+        if($request->id_tipo_proyecto == 3)
+        {   
+            DB::select
+            (
+                "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->descripcion,null,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto,$nombre3)
+            );
+        }
+        else
+        {
+            DB::select
+            (
+                "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->descripcion,$request->precio,null,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto,$nombre3)
+            );
+        }
+
+      /*if($file != null && $file2 != null)
         {
 
             //obtenemos el nombre del archivo
             $nombre = $file->getClientOriginalName();
             $nombre2 = $file2->getClientOriginalName();
+            $nombre3 = $file3->getClientOriginalName();
 
             //indicamos que queremos guardar un nuevo archivo en el disco local
             \Storage::disk('local')->put($nombre,  \File::get($file));
             \Storage::disk('local')->put($nombre2,  \File::get($file2));
+            \Storage::disk('local')->put($nombre3,  \File::get($file3));
 
             if($request->id_tipo_proyecto == 3)
             {   
                 DB::select
                 (
-                    "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->descripcion,null,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto)
+                    "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->descripcion,null,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto,$nombre3)
                 );
             }
             else
             {
                 DB::select
                 (
-                    "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->descripcion,$request->precio,null,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto)
+                    "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->descripcion,$request->precio,null,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto,$nombre3)
                 );
             }
             
@@ -254,7 +313,7 @@ class ProyectoAdminController extends Controller
             }
         }
 
-        /*$array[] = array($request->nombre,$request->eslogan,$request->descripcion,$request->precio,$request->fase,$request->ubicacion,$request->id_tipo_proyecto);
+        $array[] = array($request->nombre,$request->eslogan,$request->descripcion,$request->precio,$request->fase,$request->ubicacion,$request->id_tipo_proyecto);
         var_dump($array);
 
         if($request->id_tipo_proyecto == 3)
@@ -270,9 +329,9 @@ class ProyectoAdminController extends Controller
             (
                 "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->descripcion,$request->precio,null,$request->fase,$nombre2,$request->ubicacion,$id,$request->id_tipo_proyecto)
             );
-        }*/
-        //$logovideo = DB::select("call sp_consultarLogoVideoProyecto($request->id)");
-        //dd($logovideo[0]->video);
+        }
+        $logovideo = DB::select("call sp_consultarLogoVideoProyecto($request->id)");
+        dd($logovideo[0]->video);*/
         
         return redirect('/administrarproyectos');
     }

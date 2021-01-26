@@ -21,8 +21,11 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="fase" name="fase" placeholder="Fase" required>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="imagen" name="imagen" id="customFileLogotipo" required>
+                                    <label class="custom-file-label" for="customFile">Imagen</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,7 +76,22 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" required></textarea>
+                                <input type="text" class="form-control" id="fase" name="fase" placeholder="Fase" required>
+                            </div>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <div class="page-wrapper box-content">
+                                    <textarea class="form-control content" id="descripcion" name="descripcion" placeholder="Descripción" required></textarea>
+                                </div>
+                                <script>
+                                $(document).ready(function() {
+                                $('.content').richText();
+                                });
+                                </script>
                             </div>
                         </div>
                     </div>

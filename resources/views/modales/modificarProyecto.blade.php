@@ -20,20 +20,23 @@
                                 <input type="text" class="form-control" id="nombre" name="nombre" value="{{$p->nombre}}">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" id="fase" name="fase" value="{{$p->fase}}">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="imagen" name="imagen"> 
+                                    <label class="custom-file-label" for="imagen">Imagen</label>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="logotipo" name="logotipo"> 
-                                    <label class="custom-file-label" for="logotipo"></label>
+                                    <label class="custom-file-label" for="logotipo">Logotipo</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="video" name="video">
-                                    <label class="custom-file-label" for="video"></label>
+                                    <label class="custom-file-label" for="video">Video</label>
                                 </div>
                             </div>
                         </div>
@@ -66,6 +69,12 @@
                                     @endif
                                 </select>
                             </div>
+                        </div>
+                        <div class="row mb-3">
+                         <div class="col">
+                            <input type="text" class="form-control" id="fase" name="fase" value="{{$p->fase}}">
+                         </div>
+                         <div class="col"></div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
