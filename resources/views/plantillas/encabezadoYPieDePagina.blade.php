@@ -13,9 +13,14 @@
         <!-- the font awesome icon library if using with `fas` theme (or Bootstrap 4.x). Note that default icons used in the plugin are glyphicons that are bundled only with Bootstrap 3.x. -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/my-styles.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/site.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/site.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/richtext.min.css') }}" rel="stylesheet" type="text/css">
+     
     </head>
     <body class="d-flex flex-column h-100">
         @yield('menu')
@@ -39,7 +44,7 @@
                 </div>
             </div>
             </footer>
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
             <!-- piexif.min.js is needed for auto orienting image files OR when restoring exif data in resized images and when you
                 wish to resize images before upload. This must be loaded before fileinput.min.js -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/js/plugins/piexif.min.js" type="text/javascript"></script>
@@ -57,7 +62,7 @@
             <!-- following theme script is needed to use the Font Awesome 5.x theme (`fas`) -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/themes/fas/theme.min.js"></script>
             <!-- optionally if you need translation for your language then include the locale file as mentioned below (replace LANG.js with your language locale) -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/js/locales/LANG.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/js/locales/es.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

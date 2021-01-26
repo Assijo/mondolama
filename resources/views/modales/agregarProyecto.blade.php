@@ -84,14 +84,12 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <div class="page-wrapper box-content">
-                                    <textarea class="form-control content" id="descripcion" name="descripcion" placeholder="Descripción" required></textarea>
-                                </div>
-                                <script>
-                                $(document).ready(function() {
-                                $('.content').richText();
-                                });
-                                </script>
+                               
+                                    <textarea class="form-control sss2" id="estaCosa" name="descripcion" placeholder="Descripción" required>
+                                      
+                                    </textarea>
+                                
+                    
                             </div>
                         </div>
                     </div>
@@ -109,3 +107,4 @@
         </div>
     </div>
 </div>
+

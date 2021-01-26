@@ -2,6 +2,8 @@
 @include('modales/agregarProyecto')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
+
+
         <div class="row align-items-center">
             <div class="col">
                 <form class="form-inline">
@@ -47,7 +49,7 @@
                             <td>
                                 <div class="d-flex flex-row">
                                     <div class="d-flex mx-1">
-                                        <a data-toggle="modal" data-target="#modificarProyecto{{ $p->id_proyecto }}">
+                                        <a data-flag="0" class="magic" data-magic="{{$p->id_proyecto}}"  data-toggle="modal" data-target="#modificarProyecto{{ $p->id_proyecto }}">
                                             <svg width="14px"
                                             height="14px" viewBox="0 0 490.7 423.1" style="enable-background:new 0 0 490.7 423.1;">
                                             <path d="M469.3,423.1H192c-11.8,0-21.3-9.6-21.3-21.3s9.6-21.3,21.3-21.3h277.3c11.8,0,21.3,9.6,21.3,21.3S481.1,423.1,469.3,423.1z
@@ -143,125 +145,293 @@
                         @include('modales/eliminarFoto')
                         @include('modales/eliminarProyecto')
                         @endforeach
+
+                   
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <script>
-        window.onload = function() {
+  
+<script>
+    window.onload = function() {
+    
+        $(".magic").click(function() {
+        var sss=    $(this).data("magic");
 
 
-            $('#descripcion').richText({
-                // text formatting
-                bold: true,
-                italic: true,
-                underline: true,
-
-                // text alignment
-                leftAlign: true,
-                centerAlign: true,
-                rightAlign: true,
-                justify: true,
-
-                // lists
-                ol: false,
-                ul: false,
-
-                // title
-                heading: true,
-
-                // fonts
-                fonts: false,
-
-                fontColor: false,
-                fontSize: false,
-
-                // uploads
-                imageUpload: false,
-
-                fileUpload: false,
+        var magic='.sss-'+sss;  
 
 
-                // media
-                videoEmbed: false,
-                // link
-                urls: false,
+   
+console.log($(this).data('flag'));
+if( $(this).data('flag')=='0'){
 
-                // tables
-                table: false,
 
-                // code
-                removeStyles: false,
-                code: false,
+        $(magic).richText({
+      // text formatting
+      bold: true,
+      italic: true,
+      underline: true,
 
-                translations: {
-                    'title': 'Titulo',
-                    'white': 'Blanco',
-                    'black': 'Negro',
-                    'brown': 'Café',
-                    'beige': 'Beige',
-                    'darkBlue': 'Azul Oscuro',
-                    'blue': 'Blue',
-                    'lightBlue': 'Light Blue',
-                    'darkRed': 'Dark Red',
-                    'red': 'Rojo',
-                    'darkGreen': 'Dark Green',
-                    'green': 'Green',
-                    'purple': 'Purple',
-                    'darkTurquois': 'Dark Turquois',
-                    'turquois': 'Turquois',
-                    'darkOrange': 'Dark Orange',
-                    'orange': 'Orange',
-                    'yellow': 'Yellow',
-                    'imageURL': 'Image URL',
-                    'fileURL': 'File URL',
-                    'linkText': 'Link text',
-                    'url': 'URL',
-                    'size': 'Size',
-                    'responsive': 'Responsive',
-                    'text': 'Texto',
-                    'openIn': 'Open in',
-                    'sameTab': 'Same tab',
-                    'newTab': 'New tab',
-                    'align': 'Alinear',
-                    'left': 'Izquierda',
-                    'justify': 'Justificar',
-                    'center': 'Centro',
-                    'right': 'Derecho',
-                    'rows': 'Rows',
-                    'columns': 'Columns',
-                    'add': 'Add',
-                    'pleaseEnterURL': 'Please enter an URL',
-                    'videoURLnotSupported': 'Video URL not supported',
-                    'pleaseSelectImage': 'Please select an image',
-                    'pleaseSelectFile': 'Please select a file',
-                    'bold': 'Negritas',
-                    'italic': 'Itálica',
-                    'underline': 'Subrayado',
-                    'alignLeft': 'Alinear Izquierda',
-                    'alignCenter': 'Alinear Centro',
-                    'alignRight': 'Alinear Derecha',
-                    'addOrderedList': 'Add ordered list',
-                    'addUnorderedList': 'Add unordered list',
-                    'addHeading': 'Agrgar Encabezado/Titulo',
-                    'addFont': 'Add font',
-                    'addFontColor': 'Add font color',
-                    'addFontSize': 'Add font size',
-                    'addImage': 'Add image',
-                    'addVideo': 'Add video',
-                    'addFile': 'Add file',
-                    'addURL': 'Add URL',
-                    'addTable': 'Add table',
-                    'removeStyles': 'Remove styles',
-                    'code': 'Show HTML code',
-                    'undo': 'Undo',
-                    'redo': 'Redo',
-                    'close': 'Close'
-                },
-            });
-        }
+      // text alignment
+      leftAlign: true,
+      centerAlign: true,
+      rightAlign: true,
+      justify: true,
+
+      // lists
+      ol: false,
+      ul: false,
+
+      // title
+      heading: true,
+
+      // fonts
+      fonts: false,
+
+      fontColor: false,
+      fontSize: false,
+
+      // uploads
+      imageUpload: false,
+
+      fileUpload: false,
+
+
+      // media
+      videoEmbed: false,
+      // link
+      urls: false,
+
+      // tables
+      table: false,
+
+      // code
+      removeStyles: false,
+      code: false,
+
+      translations: {
+          'title': 'Titulo',
+          'white': 'Blanco',
+          'black': 'Negro',
+          'brown': 'Café',
+          'beige': 'Beige',
+          'darkBlue': 'Azul Oscuro',
+          'blue': 'Blue',
+          'lightBlue': 'Light Blue',
+          'darkRed': 'Dark Red',
+          'red': 'Rojo',
+          'darkGreen': 'Dark Green',
+          'green': 'Green',
+          'purple': 'Purple',
+          'darkTurquois': 'Dark Turquois',
+          'turquois': 'Turquois',
+          'darkOrange': 'Dark Orange',
+          'orange': 'Orange',
+          'yellow': 'Yellow',
+          'imageURL': 'Image URL',
+          'fileURL': 'File URL',
+          'linkText': 'Link text',
+          'url': 'URL',
+          'size': 'Size',
+          'responsive': 'Responsive',
+          'text': 'Texto',
+          'openIn': 'Open in',
+          'sameTab': 'Same tab',
+          'newTab': 'New tab',
+          'align': 'Alinear',
+          'left': 'Izquierda',
+          'justify': 'Justificar',
+          'center': 'Centro',
+          'right': 'Derecho',
+          'rows': 'Rows',
+          'columns': 'Columns',
+          'add': 'Add',
+          'pleaseEnterURL': 'Please enter an URL',
+          'videoURLnotSupported': 'Video URL not supported',
+          'pleaseSelectImage': 'Please select an image',
+          'pleaseSelectFile': 'Please select a file',
+          'bold': 'Negritas',
+          'italic': 'Itálica',
+          'underline': 'Subrayado',
+          'alignLeft': 'Alinear Izquierda',
+          'alignCenter': 'Alinear Centro',
+          'alignRight': 'Alinear Derecha',
+          'addOrderedList': 'Add ordered list',
+          'addUnorderedList': 'Add unordered list',
+          'addHeading': 'Agrgar Encabezado/Titulo',
+          'addFont': 'Add font',
+          'addFontColor': 'Add font color',
+          'addFontSize': 'Add font size',
+          'addImage': 'Add image',
+          'addVideo': 'Add video',
+          'addFile': 'Add file',
+          'addURL': 'Add URL',
+          'addTable': 'Add table',
+          'removeStyles': 'Remove styles',
+          'code': 'Show HTML code',
+          'undo': 'Undo',
+          'redo': 'Redo',
+          'close': 'Close'
+      },
+
+
+  });
+}
+   
+
+  var seguimos =  $(magic).val();
+  
+  var magic2='.MoreMagic-'+sss;  
+  $(magic2).val(seguimos);
+
+  $(this).data('flag','1');
+
+
+
+
+
+ 
+
+});
+$('.XD').click(function(e) {
+    e.preventDefault();
+    
+  var id=$(this).data("miau");
+  var magic='.sss-'+id;  
+  var seguimos =  $(magic).val();
+  var magic3='.MoreMagic-'+id;  
+  $(magic3).val(seguimos);
+
+
+  var yanise=".formMagic-"+id;
+  $(yanise).submit();
+   
+});
+
+
+
+
+        $('.sss2').richText({
+            // text formatting
+            bold: true,
+            italic: true,
+            underline: true,
+    
+            // text alignment
+            leftAlign: true,
+            centerAlign: true,
+            rightAlign: true,
+            justify: true,
+    
+            // lists
+            ol: false,
+            ul: false,
+    
+            // title
+            heading: true,
+    
+            // fonts
+            fonts: false,
+    
+            fontColor: false,
+            fontSize: false,
+    
+            // uploads
+            imageUpload: false,
+    
+            fileUpload: false,
+    
+    
+            // media
+            videoEmbed: false,
+            // link
+            urls: false,
+    
+            // tables
+            table: false,
+    
+            // code
+            removeStyles: false,
+            code: false,
+    
+            translations: {
+                'title': 'Titulo',
+                'white': 'Blanco',
+                'black': 'Negro',
+                'brown': 'Café',
+                'beige': 'Beige',
+                'darkBlue': 'Azul Oscuro',
+                'blue': 'Blue',
+                'lightBlue': 'Light Blue',
+                'darkRed': 'Dark Red',
+                'red': 'Rojo',
+                'darkGreen': 'Dark Green',
+                'green': 'Green',
+                'purple': 'Purple',
+                'darkTurquois': 'Dark Turquois',
+                'turquois': 'Turquois',
+                'darkOrange': 'Dark Orange',
+                'orange': 'Orange',
+                'yellow': 'Yellow',
+                'imageURL': 'Image URL',
+                'fileURL': 'File URL',
+                'linkText': 'Link text',
+                'url': 'URL',
+                'size': 'Size',
+                'responsive': 'Responsive',
+                'text': 'Texto',
+                'openIn': 'Open in',
+                'sameTab': 'Same tab',
+                'newTab': 'New tab',
+                'align': 'Alinear',
+                'left': 'Izquierda',
+                'justify': 'Justificar',
+                'center': 'Centro',
+                'right': 'Derecho',
+                'rows': 'Rows',
+                'columns': 'Columns',
+                'add': 'Add',
+                'pleaseEnterURL': 'Please enter an URL',
+                'videoURLnotSupported': 'Video URL not supported',
+                'pleaseSelectImage': 'Please select an image',
+                'pleaseSelectFile': 'Please select a file',
+                'bold': 'Negritas',
+                'italic': 'Itálica',
+                'underline': 'Subrayado',
+                'alignLeft': 'Alinear Izquierda',
+                'alignCenter': 'Alinear Centro',
+                'alignRight': 'Alinear Derecha',
+                'addOrderedList': 'Add ordered list',
+                'addUnorderedList': 'Add unordered list',
+                'addHeading': 'Agrgar Encabezado/Titulo',
+                'addFont': 'Add font',
+                'addFontColor': 'Add font color',
+                'addFontSize': 'Add font size',
+                'addImage': 'Add image',
+                'addVideo': 'Add video',
+                'addFile': 'Add file',
+                'addURL': 'Add URL',
+                'addTable': 'Add table',
+                'removeStyles': 'Remove styles',
+                'code': 'Show HTML code',
+                'undo': 'Undo',
+                'redo': 'Redo',
+                'close': 'Close'
+            },
+        });
+ 
+    
+
+      
+
+    }
+
+
+
+    
     </script>
 
 @endsection

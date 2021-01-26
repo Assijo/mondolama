@@ -12,7 +12,7 @@
 				</div>
             </div>
             <div class="modal-body">
-                    <form action="{{url('/modificarproyectos')}}" method="post" enctype="multipart/form-data">
+                    <form class="formMagic-{{$p->id_proyecto}}" action="{{url('/modificarproyectos')}}" method="post" enctype="multipart/form-data" >
                     @csrf
                         <div class="row mb-3">
                             <div class="col">
@@ -78,20 +78,29 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <textarea class="form-control"  id="descripcion" name="descripcion">{{$p->descripcion}}</textarea>
+                                <textarea class="form-control sss-{{$p->id_proyecto}}"   name="descripcion">
+                                    {!! ($p->descripcion) !!} 
+                                </textarea>
                             </div>
                         </div>
                         <div class="row mt-3 mb-n3 text-center">
                             <div class="col">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-dark">Guardar</button>
+                                    <button data-miau="{{$p->id_proyecto}}" type="submit" class="btn btn-dark XD">Guardar</button>
                                 </div>
                             </div>
                         </div>
+                        <div>
+                           <input class="MoreMagic-{{$p->id_proyecto}}" type="hidden" id="modDes" name="modDes" value="sss" hidden>
+                        </div>
                     </form>
             </div>
+          
+          
             <div class="modal-footer">
             </div>
         </div>
     </div>
 </div>
+
+

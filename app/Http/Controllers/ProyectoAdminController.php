@@ -57,11 +57,13 @@ class ProyectoAdminController extends Controller
      */
     public function store(Request $request)
     {
+
         $file = $request->file('logotipo');
         $file2 = $request->file('video');
         $file3 = $request->file('imagen');
-        
-        $descripcion = nl2br(htmlentities($request->descripcion, ENT_QUOTES, 'UTF-8'));
+       
+       // $descripcion = nl2br(htmlentities($request->descripcion, ENT_QUOTES, 'UTF-8'));
+       $descripcion=$request->descripcion;
 
         if($file != null && $file2 != null && $file3 != null)
         {
@@ -155,6 +157,9 @@ class ProyectoAdminController extends Controller
         $file2 = $request->file('video');
         $file3 = $request->file('imagen');
 
+
+  
+        
         if($file == null)
         {
             $logovideo = DB::select("call sp_consultarLogoVideoImagenProyecto($request->id)");
@@ -195,14 +200,14 @@ class ProyectoAdminController extends Controller
         {   
             DB::select
             (
-                "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->descripcion,null,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto,$nombre3)
+                "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->modDes,null,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto,$nombre3)
             );
         }
         else
         {
             DB::select
             (
-                "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->descripcion,$request->precio,null,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto,$nombre3)
+                "call sp_actualizarProyecto(?,?,?,?,?,?,?,?,?,?,?,?)", array($request->nombre,$nombre,$request->eslogan,$request->modDes,$request->precio,null,$request->fase,$nombre2,$request->ubicacion,$request->id,$request->id_tipo_proyecto,$nombre3)
             );
         }
 
