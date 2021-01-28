@@ -18,43 +18,26 @@ Route::get('/', function () {
 });
 
 Route::match(['get', 'post'],'/pagar', function(){return view('pagar');});
-
-Route::resource('proyectos', 'PruebaController');
 Route::resource('/index','ProyectoClienteController');
 Route::resource('/administrarproyectos','ProyectoAdminController');
 Route::resource('/usuarios','UsuarioController');
 Route::resource('/empleados','EmpleadoController');
 Route::resource('/administrarcarouselbanner','CarouselController');
-//Route::resource('/pagar','PagoController');
+Route::resource('/acercade','BannerController');
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
-Route::get('/apartarlotes/{id}',['as'=>'/apartarlotes','uses'=>'ManzanaController@show']);
-Route::get('/administrarlotesmanzanas/{id}',['as'=>'/administrarlotesmanzanas','uses'=>'ManzanaController@show']);
 Route::post('/administrarproyectos','ProyectoAdminController@store');
 Route::post('/eliminarfotos','ProyectoAdminController@destroy');
 Route::post('/eliminarproyecto','ProyectoClienteController@destroy');
 Route::post('/usuarios','UsuarioController@store');
 Route::post('/modificarproyectos','ProyectoAdminController@update');
-Route::post('/loginadministrarproyectos','LoginController@index');
 Route::post('/pago', 'PagoController@store');
 Route::post('/agregarImagen', 'BannerController@store');
 Route::post('/agregarBanner', 'CarouselController@store');
 Route::post('/modificarBanner', 'CarouselController@update');
 Route::post('/eliminarBanner', 'CarouselController@destroy');
+Route::get('/terminoscondiciones', 'BannerController@show');
+Route::get('/politicasprivacidad', 'BannerController@update');
 Route::match(['get','post'],'/empleado', 'EmpleadoController@show');
-
-
-
-Route::get('/acercade', function () {
-    return view('acercaDe');
-});
-
-Route::get('/terminoscondiciones', function () {
-    return view('terminosCondiciones');
-});
-
-Route::get('/politicasprivacidad', function () {
-    return view('politicasPrivacidad');
-});
 
 Route::get('/pagosclientes', function () {
     return view('pagosClientes');
@@ -86,8 +69,6 @@ Route::get('/verperfil', function () {
 Route::get('/login', function () {
     return view('login');
 });
-
-Route::post('/login','LoginController@store')->middleware('registeduser');//*Login*//
 
 Route::get('/cambiarcontrasena', function () {
     return view('cambiarContrasena');

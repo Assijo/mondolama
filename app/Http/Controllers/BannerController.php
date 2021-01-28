@@ -15,7 +15,12 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //
+        $banner =  DB::select
+        (
+            "call sp_consultarBanner()"
+        );
+
+        return view('/acercaDe',['banner'=>$banner]);
     }
 
     /**
@@ -42,9 +47,9 @@ class BannerController extends Controller
 
         \Storage::disk('local')->put($nombre,  \File::get($file));
 
-        DB::select("call sp_insertarActualizarBanner($nombre)");
+        DB::select("call sp_insertarActualizarBanner('$nombre')");
 
-        return view('/administrarcarouselbanner');
+        return redirect('/administrarcarouselbanner');
     }
 
     /**
@@ -53,9 +58,14 @@ class BannerController extends Controller
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function show(int $id)
+    public function show()
     {
-        //
+        $banner =  DB::select
+        (
+            "call sp_consultarBanner()"
+        );
+
+        return view('/terminosCondiciones',['banner'=>$banner]);
     }
 
     /**
@@ -76,9 +86,14 @@ class BannerController extends Controller
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prueba $prueba)
+    public function update()
     {
-        //
+        $banner =  DB::select
+        (
+            "call sp_consultarBanner()"
+        );
+
+        return view('/politicasPrivacidad',['banner'=>$banner]);
     }
 
     /**

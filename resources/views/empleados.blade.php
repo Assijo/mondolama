@@ -1,6 +1,7 @@
 @extends('plantillas/menuNavegacion')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
+        <!--
         <div class="row align-items-center">
             <div class="col-4"></div>
             <div class="col-sm-4">
@@ -17,6 +18,7 @@
             </div>
             <div class="col-4"></div>
         </div>
+        -->
         <form id="empleado" method="POST" action="{{url('/empleado')}}" enctype="multipart/form-data">
         @csrf
             <div class="row my-5 align-items-center">

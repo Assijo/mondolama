@@ -2,6 +2,7 @@
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
+            <!--
             <div class="col-sm-4 d-flex align-items-start">
                 <form class="form-inline">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -19,7 +20,8 @@
                     <option>Tipo de usuario...</option>
                 </select>
             </div>
-            <div class="col-sm-4 mb-3 d-flex align-items-start">
+            -->
+            <div class="col d-flex align-items-start">
                 <button type="button" class="btn btn-dark mt-3 mt-md-0 ml-auto" data-toggle="modal" data-target="#agregarUsuario">Agregar usuario</button>
             </div>
         </div>

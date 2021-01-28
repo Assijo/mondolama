@@ -5,6 +5,7 @@
 
 
         <div class="row align-items-center">
+            <!--
             <div class="col">
                 <form class="form-inline">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -18,6 +19,7 @@
                     </button>
                 </form>
             </div>
+            -->
             <div class="col d-flex align-items-start">
                 <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#agregarProyecto">Agregar proyecto</button>
             </div>

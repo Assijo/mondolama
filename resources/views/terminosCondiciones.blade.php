@@ -1,7 +1,9 @@
 @extends('plantillas/menuBanner')
 @section('contenido')
 
-<div id="banner" class="banner">
+@foreach($banner as $b)
+<div id="banner" class="banner" style="background: url({{ asset('storage/'.$b->imagen)}})">
+@endforeach
     <div class="container">
         <div class="row">
             <div class="col text-center">

@@ -42,14 +42,14 @@ class CarouselController extends Controller
     public function store(Request $request)
     {
         $file = $request->file('imagen');
-
+        
         $nombre = $file->getClientOriginalName();
 
         \Storage::disk('local')->put($nombre,  \File::get($file));
 
-        DB::select("call sp_insertarCarousel(?,?,?)", array($request->imagen,$request->titulo,$request->subtitulo));
+        DB::select("call sp_insertarCarousel(?,?,?)", array($nombre,$request->titulo,$request->subtitulo));
 
-        return view('administrarcarouselbanner');
+        return redirect('/administrarcarouselbanner');
     }
 
     /**
@@ -98,7 +98,7 @@ class CarouselController extends Controller
 
         DB::select("call sp_actualizarCarousel(?,?,?,?)", array($request->imagen,$request->titulo,$request->subtitulo,$request->idcarousel));
 
-        return view('administrarcarouselbanner');
+        return redirect('/administrarcarouselbanner');
     }
 
     /**
@@ -113,6 +113,6 @@ class CarouselController extends Controller
             "call sp_eliminarCarousel($request->idbanner)"
         );
 
-        return view('administrarcarouselbanner');
+        return redirect('/administrarcarouselbanner');
     }
 }

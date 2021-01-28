@@ -3,9 +3,19 @@
 
 <div id="carouselExampleCaptions" class="carousel slide custom-carousel" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    @php
+        $i = 0;
+    @endphp
+    @foreach($carousel as $c)
+        @if($i === 0)
+      <li data-target="#carouselExampleCaptions" data-slide-to="{{$i}}" class="active"></li>
+        @else
+      <li data-target="#carouselExampleCaptions" data-slide-to="{{$i}}"></li>
+        @endif
+          @php
+              $i ++;
+          @endphp
+    @endforeach
   </ol>
   <div class="carousel-inner">
     @php
