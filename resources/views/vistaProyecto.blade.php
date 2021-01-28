@@ -1,7 +1,9 @@
 @extends('plantillas/menuBanner')
 @section('contenido')
 @foreach($proyectos as $p)
-<div id="banner" class="banner">
+@foreach($banner as $b)
+<div id="banner" class="banner" style="background: url({{ asset('storage/'.$b->imagen)}})">
+@endforeach
     <div class="container">
         <div class="row mb-4">
             <div class="col text-center">
@@ -89,7 +91,7 @@
 <div class="container mb-5">
     <div class="row my-5">
         <div class="col p-descripcion">
-            {{$p->descripcion}}
+            {!! ($p->descripcion) !!}
         </div>
     </div>
     <div class="row">

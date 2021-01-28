@@ -421,7 +421,6 @@ body
 
 .banner
 {
-  background: url(../images/pixabay.jpg);
   top: -180px; 
   z-index: 20;
   position: relative;

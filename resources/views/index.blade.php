@@ -8,27 +8,31 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/unsplash6.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="images/unsplash5.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="images/unsplash4.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h3>Third slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </div>
+    @php
+        $i = 0;
+    @endphp
+    @foreach($carousel as $c)
+        @if($i === 0)
+        <div class="carousel-item active">
+          <img src="{{asset('storage/'.$c->imagen)}}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>{{$c->titulo}}</h3>
+            <p>{{$c->subtitulo}}</p>
+          </div>
+        </div>
+        @else
+        <div class="carousel-item">
+          <img src="{{asset('storage/'.$c->imagen)}}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>{{$c->titulo}}</h3>
+            <p>{{$c->subtitulo}}</p>
+          </div>
+        </div>
+        @endif
+        @php
+            $i ++;
+        @endphp
+    @endforeach
   </div>
   <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -56,7 +60,7 @@
                         <div class="col wow animate__slideInUp animate__delay-5s">
                             <img src="{{asset('storage/'.$p->imagen_principal)}}" class="img-fluid">
                             <div class="p-tamano-definido mt-3">
-                                {{$p->descripcion}}
+                                {!! ($p->descripcion) !!}
                                 <p class="contenedor-descripcion">
                                     .
                                 </p>

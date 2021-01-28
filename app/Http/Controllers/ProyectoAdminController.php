@@ -61,9 +61,6 @@ class ProyectoAdminController extends Controller
         $file = $request->file('logotipo');
         $file2 = $request->file('video');
         $file3 = $request->file('imagen');
-       
-       // $descripcion = nl2br(htmlentities($request->descripcion, ENT_QUOTES, 'UTF-8'));
-       $descripcion=$request->descripcion;
 
         if($file != null && $file2 != null && $file3 != null)
         {
@@ -82,14 +79,14 @@ class ProyectoAdminController extends Controller
             {
                 DB::select
                 (
-                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$descripcion,null,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,$request->precio,$nombre3)
+                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$request->descripcion,null,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,$request->precio,$nombre3)
                 );
             }
             else
             {
                 DB::select
                 (
-                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$descripcion,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,null,$nombre3)
+                    'call sp_insertarAgregarProyecto(?,?,?,?,?,?,?,?,?,?,?)',array($request->nombre,$nombre,$request->eslogan,$request->descripcion,$request->precio,$request->fase,$nombre2,$request->ubicacion,$request->id_tipo_proyecto,null,$nombre3)
                 ); 
             }
         }

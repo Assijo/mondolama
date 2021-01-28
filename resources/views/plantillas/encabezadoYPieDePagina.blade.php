@@ -18,7 +18,6 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/my-styles.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/site.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('css/site.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/richtext.min.css') }}" rel="stylesheet" type="text/css">
      
     </head>

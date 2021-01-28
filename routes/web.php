@@ -24,6 +24,7 @@ Route::resource('/index','ProyectoClienteController');
 Route::resource('/administrarproyectos','ProyectoAdminController');
 Route::resource('/usuarios','UsuarioController');
 Route::resource('/empleados','EmpleadoController');
+Route::resource('/administrarcarouselbanner','CarouselController');
 //Route::resource('/pagar','PagoController');
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
 Route::get('/apartarlotes/{id}',['as'=>'/apartarlotes','uses'=>'ManzanaController@show']);
@@ -35,6 +36,10 @@ Route::post('/usuarios','UsuarioController@store');
 Route::post('/modificarproyectos','ProyectoAdminController@update');
 Route::post('/loginadministrarproyectos','LoginController@index');
 Route::post('/pago', 'PagoController@store');
+Route::post('/agregarImagen', 'BannerController@store');
+Route::post('/agregarBanner', 'CarouselController@store');
+Route::post('/modificarBanner', 'CarouselController@update');
+Route::post('/eliminarBanner', 'CarouselController@destroy');
 Route::match(['get','post'],'/empleado', 'EmpleadoController@show');
 
 

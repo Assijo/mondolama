@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
-class ProyectoClienteController extends Controller
+class BannerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,23 +15,7 @@ class ProyectoClienteController extends Controller
      */
     public function index()
     {
-        //$resultados = collect([]);
-
-        $proyectos =  DB::select
-        (
-            "call sp_consultarProyectos()"
-        );
-
-        $carousel =  DB::select
-        (
-            "call sp_consultarCarousel()"
-        );
-
-        
-        
-
-        //dd($resultados);
-        return view('index',compact(['carousel','proyectos']));
+        //
     }
 
     /**
@@ -52,7 +36,15 @@ class ProyectoClienteController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $file = $request->file('imagen');
+
+        $nombre = $file->getClientOriginalName();
+
+        \Storage::disk('local')->put($nombre,  \File::get($file));
+
+        DB::select("call sp_insertarActualizarBanner($nombre)");
+
+        return view('/administrarcarouselbanner');
     }
 
     /**
@@ -63,27 +55,7 @@ class ProyectoClienteController extends Controller
      */
     public function show(int $id)
     {
-
-        $proyectos =  DB::select
-        (
-            "call sp_consultarProyecto($id)"
-        );
-
-        //dd($proyectos);
-
-        $idproyecto = $proyectos[0]->id_proyecto;
-
-        $fotos =  DB::select
-        (
-            "call sp_consultarFotos($idproyecto)"
-        );
-
-        $banner =  DB::select
-        (
-            "call sp_consultarBanner()"
-        );
-    
-        return view('vistaProyecto',compact(['banner','fotos','proyectos']));
+        //
     }
 
     /**
@@ -117,11 +89,6 @@ class ProyectoClienteController extends Controller
      */
     public function destroy(Request $request)
     {
-        DB::select
-        (
-            "call sp_eliminarProyecto($request->idproyecto)"
-        );
-
-        return redirect('/administrarproyectos');
+        //
     }
 }

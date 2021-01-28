@@ -1,10 +1,10 @@
 <!-- Modal -->
-<div class="modal fade" id="eliminarProyecto{{$p->id_proyecto}}" tabindex="-1" role="dialog" aria-labelledby="eliminarProyectoLabel" aria-hidden="true">
+<div class="modal fade" id="eliminarBanner{{ $c->id_carousel }}" tabindex="-1" role="dialog" aria-labelledby="eliminarBannerLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header row">
 				<div class="col-3"></div>
-				<h5 class="modal-title col-6 text-center" id="eliminarProyectoLabel">Eliminar proyecto</h5>
+				<h5 class="modal-title col-6 text-center" id="eliminarBannerLabel">Eliminar banner</h5>
 				<div class="col-3">
 					<button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -12,12 +12,12 @@
 				</div>
 			</div>
 			<div class="modal-body">
-				<form action="{{url('/eliminarproyecto')}}" method="post" enctype="multipart/form-data">
+				<form action="{{url('/eliminarBanner')}}" method="post" enctype="multipart/form-data">
 				@csrf
 					<div class="row">
 						<div class="col text-center">
-                            <p>¿Esta seguuro de que desea eliminar este proyecto?</p>
-                            <input type="hidden" name="idproyecto" value="{{$p->id_proyecto}}">
+                            <p>¿Esta seguuro de que desea eliminar este banner?</p>
+                            <input type="hidden" id="idbanner" name="idbanner" value="{{ $c->id_carousel }}">
 					    </div>
 					</div>
 	

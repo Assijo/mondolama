@@ -21,6 +21,9 @@
                 <a class="nav-link active" href="{{url('administrarproyectos')}}">Administrar proyectos</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{url('administrarcarouselbanner')}}">Administrar carousel y banner</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link disabled" href="{{url('vendedoresproyectos')}}">Ver vendedores</a>
             </li>
             <li class="nav-item">

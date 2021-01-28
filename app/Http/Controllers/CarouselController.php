@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
-class ProyectoClienteController extends Controller
+class CarouselController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,23 +15,12 @@ class ProyectoClienteController extends Controller
      */
     public function index()
     {
-        //$resultados = collect([]);
-
-        $proyectos =  DB::select
-        (
-            "call sp_consultarProyectos()"
-        );
-
         $carousel =  DB::select
         (
             "call sp_consultarCarousel()"
         );
 
-        
-        
-
-        //dd($resultados);
-        return view('index',compact(['carousel','proyectos']));
+        return view('administrarcarouselbanner',['carousel'=>$carousel]);
     }
 
     /**
@@ -52,7 +41,15 @@ class ProyectoClienteController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $file = $request->file('imagen');
+
+        $nombre = $file->getClientOriginalName();
+
+        \Storage::disk('local')->put($nombre,  \File::get($file));
+
+        DB::select("call sp_insertarCarousel(?,?,?)", array($request->imagen,$request->titulo,$request->subtitulo));
+
+        return view('administrarcarouselbanner');
     }
 
     /**
@@ -63,27 +60,7 @@ class ProyectoClienteController extends Controller
      */
     public function show(int $id)
     {
-
-        $proyectos =  DB::select
-        (
-            "call sp_consultarProyecto($id)"
-        );
-
-        //dd($proyectos);
-
-        $idproyecto = $proyectos[0]->id_proyecto;
-
-        $fotos =  DB::select
-        (
-            "call sp_consultarFotos($idproyecto)"
-        );
-
-        $banner =  DB::select
-        (
-            "call sp_consultarBanner()"
-        );
-    
-        return view('vistaProyecto',compact(['banner','fotos','proyectos']));
+        //
     }
 
     /**
@@ -101,27 +78,41 @@ class ProyectoClienteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prueba $prueba)
+    public function update(Request $request)
     {
-        //
+        $file = $request->file('imagen');
+
+        if($file == null)
+        {
+            $carousel = DB::select("call sp_consultarCarouselEspecifico($request->idcarousel)");
+            $request->imagen = $carousel[0]->imagen;
+        }
+        else
+        {
+            $request->imagen = $file->getClientOriginalName();
+
+            \Storage::disk('local')->put($request->imagen,  \File::get($file));
+        }      
+
+        DB::select("call sp_actualizarCarousel(?,?,?,?)", array($request->imagen,$request->titulo,$request->subtitulo,$request->idcarousel));
+
+        return view('administrarcarouselbanner');
     }
 
     /**
      * Remove the specified resource from storage.
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
     {
-        DB::select
+        $carousel =  DB::select
         (
-            "call sp_eliminarProyecto($request->idproyecto)"
+            "call sp_eliminarCarousel($request->idbanner)"
         );
 
-        return redirect('/administrarproyectos');
+        return view('administrarcarouselbanner');
     }
 }
