@@ -5,21 +5,21 @@
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
 
         <h3 class="text-center">Banner</h3>
-        <hr class="text-center w-75">
+        <hr class="mx-auto w-75">
 
         <div class="col d-flex align-items-start">
             <button type="button" class="btn btn-dark mx-auto my-5" data-toggle="modal" data-target="#agregarImagen">Agregar imagen</button>
         </div>
 
         <h3 class="text-center my-5">Carousel</h3>
-        <hr class="text-center w-75">
+        <hr class="mx-auto w-75">
 
             <div class="col d-flex align-items-start">
-                <button type="button" class="btn btn-dark ml-auto" data-toggle="modal" data-target="#agregarBanner">Agregar banner</button>
+                <button type="button" class="btn btn-dark ml-auto mt-5" data-toggle="modal" data-target="#agregarBanner">Agregar banner</button>
             </div>
         </div>
         <div class="row my-5 align-items-center">
-            <div class="col table-responsive pr-0">
+            <div class="col table-responsive">
                 <table class="table w-75 mx-auto">
                     <thead>
                         <tr>

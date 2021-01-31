@@ -12,52 +12,53 @@
 				</div>
             </div>
             <div class="modal-body">
-                <form>
+                <form  action="{{url('/modificarusuario')}}" method="post" enctype="multipart/form-data">
+                @csrf
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="{{ $u->nombre }}">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Teléfono" required>
+                                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" value="{{ $u->telefono }}">
                             </div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Apellido paterno" required>
+                                <input type="text" class="form-control" id="ap_pat" name="ap_pat" placeholder="Apellido paterno" value="{{ $u->ap_paterno }}">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Correo" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Apellido materno" required>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Contraseña" required>
+                                <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo" value="{{ $u->correo }}">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <input type="date" class="form-control" placeholder="Fecha de nacimiento" required>
+                                <input type="text" class="form-control" id="ap_mat" name="ap_mat" placeholder="Apellido materno" value="{{ $u->ap_materno }}">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" value="{{ $u->contrasena }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="date" class="form-control" id="fecha_nac" name="fecha_nac" placeholder="Fecha de nacimiento" value="{{ $u->fecha_nacimiento }}">
                             </div>
                         </div>
                         <div class="col">
                             <select class="form-control" id="exampleFormControlSelect1" disabled>
-                                <option>Tipo de usuario...</option>
+                                <option selected>Administrador máster</option>
                                 <option>...</option>
                             </select>
                         </div>

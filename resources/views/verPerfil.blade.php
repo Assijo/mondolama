@@ -1,5 +1,4 @@
 @extends('plantillas/menuNavegacion')
-@include('modales/modificarDatos')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
@@ -22,33 +21,36 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($usuario as $u)
                         <tr>
                             <td scope="row">Nombre</td>
-                            <td>Juan Francisco Aarón</td>
+                            <td>{{ $u->nombre }}</td>
                         <tr>
                             <td scope="row">Apellido paterno</td>
-                            <td>Ponce</td>
+                            <td>{{ $u->ap_paterno }}</td>
                         </tr>
                         <tr>
                             <td scope="row">Apellido materno</td>
-                            <td>FLores</td>
+                            <td>{{ $u->ap_materno }}</td>
                         </tr>
                         <tr>
                             <td scope="row">Fecha de nacimiento</td>
-                            <td>05/05/2001</td>
+                            <td>{{ $u->fecha_nacimiento }}</td>
                         </tr>
                         <tr>
                             <td scope="row">Teléfono</td>
-                            <td>+52 235 236 56 12</td>
+                            <td>{{ $u->telefono }}</td>
                         </tr>
                         <tr>
                             <td scope="row">Correo</td>
-                            <td>juanfranciscoaaronponceflores@gmail.com</td>
+                            <td>{{ $u->correo }}</td>
                         </tr>
                         <tr>
                             <td scope="row">Contraseña</td>
-                            <td>juanfranciscoaaronponceflore@12345</td>
+                            <td>{{ $u->contrasena }}</td>
                         </tr>
+                        @include('modales/modificarDatos')
+                        @endforeach
                     </tbody>
                 </table>
             </div>

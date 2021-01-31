@@ -12,7 +12,7 @@
 				</div>
             </div>
             <div class="modal-body">
-                    <form class="formMagic-{{$p->id_proyecto}}" action="{{url('/modificarproyectos')}}" method="post" enctype="multipart/form-data" >
+                    <form class="formMagic-{{$p->id_proyecto}}" action="{{url('/modificarproyectos')}}" method="post" enctype="multipart/form-data">
                     @csrf
                         <div class="row mb-3">
                             <div class="col">

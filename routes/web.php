@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::match(['get', 'post'],'/pagar', function(){return view('pagar');});
 Route::resource('/index','ProyectoClienteController');
 Route::resource('/administrarproyectos','ProyectoAdminController');
-Route::resource('/usuarios','UsuarioController');
+Route::resource('/verperfil','UsuarioController');
 Route::resource('/empleados','EmpleadoController');
 Route::resource('/administrarcarouselbanner','CarouselController');
 Route::resource('/acercade','BannerController');
@@ -35,6 +35,7 @@ Route::post('/agregarImagen', 'BannerController@store');
 Route::post('/agregarBanner', 'CarouselController@store');
 Route::post('/modificarBanner', 'CarouselController@update');
 Route::post('/eliminarBanner', 'CarouselController@destroy');
+Route::post('/modificarusuario', 'UsuarioController@update');
 Route::get('/terminoscondiciones', 'BannerController@show');
 Route::get('/politicasprivacidad', 'BannerController@update');
 Route::match(['get','post'],'/empleado', 'EmpleadoController@show');
@@ -60,10 +61,6 @@ Route::get('/proyectosactivosinactivos', function () {
 });
 Route::get('/pagosaprobar', function () {
     return view('pagosAprobar');
-});
-
-Route::get('/verperfil', function () {
-    return view('verPerfil');
 });
 
 Route::get('/login', function () {

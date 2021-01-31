@@ -3,7 +3,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <nav class="navbar">
-            <a class="navbar-brand" href="{{url('index')}}">
+            <a class="navbar-brand" href="#">
                 <img src="images/hoja.svg" width="40" height="40" alt="" loading="lazy">
             </a>
         </nav>

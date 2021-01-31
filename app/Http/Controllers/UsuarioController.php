@@ -15,12 +15,16 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios =  DB::select(
+        /*$usuarios =  DB::select(
             "call sp_consultarUsuarios()"
       );
     //dd($lotes);
       
-    return view('usuarios',['usuarios'=>$usuarios]);
+    return view('usuarios',['usuarios'=>$usuarios]);*/
+
+        $usuario = DB::select("call sp_consultarUsuarioAdminMaster()");
+
+        return view('/verPerfil', ['usuario'=>$usuario]);
     }
 
     /**
@@ -41,9 +45,9 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        DB::select('call sp_insertarUsuario(?,?,?,?,?,?,?,?)',array($request->nombre,$request->ap_paterno,$request->ap_materno,$request->fecha_nacimiento,$request->telefono,$request->correo,$request->contrasena,$request->id_tipo_usuario)); 
+        /*DB::select('call sp_insertarUsuario(?,?,?,?,?,?,?,?)',array($request->nombre,$request->ap_paterno,$request->ap_materno,$request->fecha_nacimiento,$request->telefono,$request->correo,$request->contrasena,$request->id_tipo_usuario)); 
         
-        return redirect('/usuarios');
+        return redirect('/usuarios');*/
     }
 
     /**
@@ -75,15 +79,22 @@ class UsuarioController extends Controller
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, int $id)
+    public function update(Request $request)
     {
-        DB::select
+        /*DB::select
         (
             "call sp_actualizarUsuario(?,?,?,?,?,?,?,?)", array($request->nombre,$request->ap_paterno,$request->ap_materno,$request->fecha_nacimiento,$request->telefono,$request->correo,$request->contrasena,$id)
         );
         //dd($request);
         
-        return redirect('/usuarios');
+        return redirect('/usuarios');*/
+
+        DB::select
+        (
+            "call sp_actualizarUsuarioAdminMaster(?,?,?,?,?,?,?)", array($request->nombre,$request->ap_pat,$request->ap_mat,$request->fecha_nac,$request->telefono,$request->correo,$request->contrasena)
+        );
+
+        return redirect('/verperfil');
     }
 
     /**
