@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row mb-4">
             <div class="col text-center">
-                <img src="images/hoja.svg" width="200px" height="200px">
+                <img src="{{ asset('images/mondolama.jpg') }}" width="200px" height="200px">
             </div>
         </div>
     </div>
