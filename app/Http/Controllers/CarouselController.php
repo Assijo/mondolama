@@ -20,7 +20,7 @@ class CarouselController extends Controller
             "call sp_consultarCarousel()"
         );
 
-        return view('administrarcarouselbanner',['carousel'=>$carousel]);
+        return view('administrarCarouselBanner',['carousel'=>$carousel]);
     }
 
     /**
