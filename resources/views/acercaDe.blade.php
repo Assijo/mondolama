@@ -17,7 +17,7 @@
     <div class="row my-5">
         <div class="col my-5">
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?autoplay=1" allowfullscreen allow="autoplay; fullscreen; picture-in-picture; xr-spatial-tracking; encrypted-media"></iframe>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/g59BY-nDJgw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
