@@ -114,6 +114,25 @@ class LoginController extends Controller
      */
     public function destroy()
     {
-        //
+        if(session()->has('sesionAdminMaster'))
+        {
+            $request->session()->forget('sesionAdminMaster');
+            return redirect('login');
+        }
+        elseif(session()->has('sesionAdmin'))
+        {
+            $request->session()->forget('sesionAdmin');
+            return redirect('login');
+        }
+        elseif(session()->has('sesionVendedor'))
+        {
+            $request->session()->forget('sesionVendedor');
+            return redirect('login');
+        }
+        elseif(session()->has('sesionCliente'))
+        {
+            $request->session()->forget('sesionCliente');
+            return redirect('login');
+        }
     }
 }
