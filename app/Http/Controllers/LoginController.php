@@ -10,10 +10,22 @@ class LoginController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+       
+        
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function create(Request $request)
     {
         $login =  DB::select
         (
@@ -21,18 +33,25 @@ class LoginController extends Controller
         );
         if($login != null)
         {
-            if($login[0]->id_tipo_persona == 1 || $login[0]->id_tipo_persona == 2)
+            if($login[0]->id_tipo_persona == 1)
             {
-                return redirect('/administrarproyectos');
-                //echo($login[0]->id_tipo_persona);
+                $sesion = session('sesionAdminMaster');
+                return redirect('/index');
+            }
+            elseif($login[0]->id_tipo_persona == 2)
+            {
+                $sesion = session('sesionAdmin');
+                return redirect('/acercade');
             }
             elseif($login[0]->id_tipo_persona == 3)
             {
-                return redirect('/pagosaprobar');
+                $sesion = session('sesionVendedor');
+                return redirect('/acercade');
             }
             elseif($login[0]->id_tipo_persona == 4)
             {
-                return redirect('/pagarproyecto');
+                $sesion = session('sesionCliente');
+                return redirect('/politicasprivacidad');
             }
         }
         else
@@ -40,17 +59,6 @@ class LoginController extends Controller
             return redirect('/login');
             
         }
-        
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
     }
 
     /**
@@ -61,12 +69,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        /*
-         aqui crear una variable de sesion que combine el usuario y
-          contraseña
-         y redireccionar a la pagina principal dependiendo del usuario y la sesion que se almaceno
-          */
+       
     }
 
     /**
@@ -109,7 +112,7 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
         //
     }

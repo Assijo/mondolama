@@ -467,6 +467,7 @@ html
 {
   color: #6c757d;
   text-decoration: none;
+  cursor: pointer;
 }
 
 /*clases del boton de desactivar una cuenta*/

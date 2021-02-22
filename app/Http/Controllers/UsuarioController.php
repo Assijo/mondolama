@@ -45,9 +45,27 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        /*DB::select('call sp_insertarUsuario(?,?,?,?,?,?,?,?)',array($request->nombre,$request->ap_paterno,$request->ap_materno,$request->fecha_nacimiento,$request->telefono,$request->correo,$request->contrasena,$request->id_tipo_usuario)); 
+        DB::select('call sp_insertarUsuario(?,?,?,?,?,?,?,?)',array($request->nombre,$request->ap_paterno,$request->ap_materno,$request->fecha_nacimiento,$request->telefono,$request->correo,$request->contrasena,$request->id_tipo_usuario)); 
         
-        return redirect('/usuarios');*/
+        if($request->id_tipo_usuario==1)
+        {
+            $sesion = session('sesionAdminMaster');
+            return redirect('/administrarproyectos');
+        }
+        elseif ($request->id_tipo_usuario==2)
+        {
+            $sesion = session('sesionAdmin');
+            return redirect('/index');
+           }
+        elseif ($request->id_tipo_usuario==3)
+        {
+            $sesion = session('sesionVendedor');
+            return redirect('/index');
+        }
+        else{
+            $sesion = session('sesionCliente');
+            return redirect('/administrarproyectos'); 
+        }
     }
 
     /**
@@ -64,12 +82,12 @@ class UsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Prueba  $prueba
+     * 
      * @return \Illuminate\Http\Response
      */
     public function edit(Request $request)
     {
-       //
+        
     }
 
     /**

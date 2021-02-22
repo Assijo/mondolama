@@ -22,10 +22,6 @@ class RegistredUser
         {
             return redirect('/login');
         }
-        else // sino continua a el controlador
-        {
-            
-        }
         return $next($request);
     }
 }
