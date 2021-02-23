@@ -16,7 +16,6 @@ class LoginController extends Controller
     public function index()
     {
        
-        
     }
 
     /**
@@ -36,12 +35,12 @@ class LoginController extends Controller
             if($login[0]->id_tipo_persona == 1)
             {
                 $sesion = session('sesionAdminMaster');
-                return redirect('/index');
+                return redirect('/administrarproyectos');
             }
             elseif($login[0]->id_tipo_persona == 2)
             {
                 $sesion = session('sesionAdmin');
-                return redirect('/acercade');
+                return redirect('/administrarproyectos');
             }
             elseif($login[0]->id_tipo_persona == 3)
             {
@@ -56,8 +55,7 @@ class LoginController extends Controller
         }
         else
         {
-            return redirect('/login');
-            
+            return redirect('/login')->with('message','Mensaje de credenciales invalidas');
         }
     }
 

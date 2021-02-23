@@ -3,6 +3,15 @@
 @section('contenido')
 
 <div class="container">
+    @if(session()->has('message'))
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <div class='alert alert-danger text-center w-50 mx-auto mt-5 mb-n3' role='alert'>
+                ¡Credenciales inválidas!
+            </div>
+        </div>
+    </div>
+    @endif
     <div class="row">
         <div class="col-sm-6 mx-auto">
             <div class="card custom-card text-center mx-auto">
