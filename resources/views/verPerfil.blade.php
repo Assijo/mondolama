@@ -9,7 +9,7 @@
             <div class="col-6 col-md-2 d-flex align-items-start">
                 <form class="text-center" method="POST" action="{{url('/logout')}}" enctype="multipart/form-data">
                 @csrf
-                    <a type="submit" class="btn btn-dark ml-auto">Cerrar sesión</a>
+                    <button type="submit" class="btn btn-dark ml-auto text-white">Cerrar sesión</button>
                 </form>
             </div>
         </div>

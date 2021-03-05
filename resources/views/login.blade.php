@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <h5 class="card-title mt-3 mb-4">Iniciar sesión</h5>
                     <p class="card-text">
-                        <form class="text-center" method="POST" action="{{url('/login')}}" enctype="multipart/form-data">
+                        <form class="text-center" method="POST" action="{{url('/loginn')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Correo">

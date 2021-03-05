@@ -24,14 +24,14 @@
                 <a class="nav-link disabled" href="{{url('usuarios')}}">Ver usuarios</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="{{url('vendedoresproyectos')}}">Ver vendedores</a>
+                <a class="nav-link" href="{{url('vendedoresproyectos')}}">Ver vendedores</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('empleados')}}">Realizar pago</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link disabled dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Ver pagos
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ver pagos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item disabled" href="{{url('pagosempleados')}}">Pagos a empleados</a>
@@ -40,7 +40,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="{{url('pagosaprobar')}}">Aprobar pagos</a>
+                <a class="nav-link" href="{{url('pagosaprobar')}}">Aprobar pagos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="{{url('verdocumentosadmin')}}">Ver documentos</a>

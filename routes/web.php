@@ -13,9 +13,8 @@ use App\Http\Controllers\Controller;
 |
 */
 
-Route::middleware(['sesionAdminMaster','sesionAdmin'])->group(function () { //grupos de rutas que usan la comprobacion sesiones de administrador master y administrador
+Route::middleware('sesionAdministradores')->group(function () { //grupos de rutas que usan la comprobacion sesiones de administrador master y administrador
     
-    Route::resource('/verperfil','UsuarioController');
     Route::resource('/empleados','EmpleadoController');
     Route::resource('/administrarproyectos','ProyectoAdminController');
     Route::resource('/administrarcarouselbanner','CarouselController');
@@ -47,6 +46,8 @@ Route::middleware(['sesionCliente'])->group(function ()
 
 });
 
+Route::resource('/verperfil','UsuarioController');
+
 Route::get('/',function(){return view('index');});
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
 Route::get('/terminoscondiciones', 'BannerController@show');
@@ -58,7 +59,7 @@ Route::resource('/acercade','BannerController');
 
 Route::post('/usuarios','UsuarioController@store');
 Route::post('/modificarusuario', 'UsuarioController@update');
-Route::post('/login','LoginController@create');
+Route::post('/loginn','LoginController@create');
 Route::post('/logout','LoginController@destroy');
 
 

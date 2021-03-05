@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class UserAdminMaster
+class UserAdministradores
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class UserAdminMaster
     public function handle($request, Closure $next)
     {
         //*Comprobacion de la existencia de una sesion de usuario en el sistema*//
-        if(!session()->has('sesionAdminMaster'))
+        if(!session()->has('sesionAdminMaster') && !session()->has('sesionAdmin'))
         {
             return redirect('/login');
         }

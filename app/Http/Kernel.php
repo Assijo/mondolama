@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'sesionAdmin' => \App\Http\Middleware\UserAdmin::class,
         'sesionVendedor' => \App\Http\Middleware\UserVendedor::class,
         'sesionCliente' => \App\Http\Middleware\UserCliente::class,
+        'sesionAdministradores' => \App\Http\Middleware\UserAdministradores::class,
     ];
 }

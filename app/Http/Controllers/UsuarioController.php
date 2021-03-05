@@ -49,21 +49,26 @@ class UsuarioController extends Controller
         
         if($request->id_tipo_usuario==1)
         {
-            $sesion = session('sesionAdminMaster');
+            session()->flush();
+            session(['sesionAdminMaster' => 'sesionAdminMaster']);
             return redirect('/administrarproyectos');
         }
         elseif ($request->id_tipo_usuario==2)
         {
-            $sesion = session('sesionAdmin');
-            return redirect('/index');
-           }
+            session()->flush();
+            session(['sesionAdmin' => 'sesionAdmin']);
+            return redirect('/administrarproyectos');
+        }
         elseif ($request->id_tipo_usuario==3)
         {
-            $sesion = session('sesionVendedor');
+            session()->flush();
+            session(['sesionVendedor' => 'sesionVendedor']);
             return redirect('/index');
         }
-        else{
-            $sesion = session('sesionCliente');
+        else
+        {
+            session()->flush();
+            session(['sesionCliente' => 'sesionCliente']);
             return redirect('/administrarproyectos'); 
         }
     }

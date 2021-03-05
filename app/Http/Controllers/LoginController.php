@@ -34,22 +34,26 @@ class LoginController extends Controller
         {
             if($login[0]->id_tipo_persona == 1)
             {
-                $sesion = session('sesionAdminMaster');
+                session()->flush();
+                session(['sesionAdminMaster' => 'sesionAdminMaster']);
                 return redirect('/administrarproyectos');
             }
             elseif($login[0]->id_tipo_persona == 2)
             {
-                $sesion = session('sesionAdmin');
+                session()->flush();
+                session(['sesionAdmin' => 'sesionAdmin']);
                 return redirect('/administrarproyectos');
             }
             elseif($login[0]->id_tipo_persona == 3)
             {
-                $sesion = session('sesionVendedor');
+                session()->flush();
+                session(['sesionVendedor' => 'sesionVendedor']);
                 return redirect('/acercade');
             }
             elseif($login[0]->id_tipo_persona == 4)
             {
-                $sesion = session('sesionCliente');
+                session()->flush();
+                session(['sesionCliente' => 'sesionCliente']);
                 return redirect('/politicasprivacidad');
             }
         }
@@ -106,31 +110,31 @@ class LoginController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy(Request $request)
     {
         if(session()->has('sesionAdminMaster'))
         {
             $request->session()->forget('sesionAdminMaster');
-            return redirect('login');
+            return redirect('/login');
         }
         elseif(session()->has('sesionAdmin'))
         {
             $request->session()->forget('sesionAdmin');
-            return redirect('login');
+            return redirect('/login');
         }
         elseif(session()->has('sesionVendedor'))
         {
             $request->session()->forget('sesionVendedor');
-            return redirect('login');
+            return redirect('/login');
         }
         elseif(session()->has('sesionCliente'))
         {
             $request->session()->forget('sesionCliente');
-            return redirect('login');
+            return redirect('/login');
         }
     }
 }
