@@ -41,7 +41,12 @@ class ProyectoClienteController extends Controller
      */
     public function create()
     {
-        //
+        $proyectos =  DB::select
+        (
+            "call sp_consultarProyectos()"
+        );
+
+        return view('pagarProyecto','proyectos');
     }
 
     /**

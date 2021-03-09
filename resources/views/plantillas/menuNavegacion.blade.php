@@ -21,7 +21,7 @@
                 <a class="nav-link" href="{{url('administrarcarouselbanner')}}">Administrar carousel y banner</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="{{url('usuarios')}}">Ver usuarios</a>
+                <a class="nav-link" href="{{url('usuarios')}}">Ver usuarios</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('vendedoresproyectos')}}">Ver vendedores</a>
@@ -34,16 +34,16 @@
                     Ver pagos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item disabled" href="{{url('pagosempleados')}}">Pagos a empleados</a>
+                <a class="dropdown-item" href="{{url('pagosempleados')}}">Pagos a empleados</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item disabled" href="{{url('pagosclientes')}}">Pagos de clientes</a>
+                <a class="dropdown-item" href="{{url('pagosclientes')}}">Pagos de clientes</a>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('pagosaprobar')}}">Aprobar pagos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="{{url('verdocumentosadmin')}}">Ver documentos</a>
+                <a class="nav-link" href="{{url('verdocumentosadmin')}}">Ver documentos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('verperfil')}}">Ver perfil</a>

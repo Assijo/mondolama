@@ -34,7 +34,9 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        $clientes = DB::select("call sp_consultarClientes()");
+
+        return view('/clientes', ['clientes'=>$clientes]);
     }
 
     /**

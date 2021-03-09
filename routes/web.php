@@ -106,6 +106,10 @@ Route::get('/pagarproyecto', function () {
     return view('pagarProyecto');
 });
 
+Route::get('/elegirproyecto', function () {
+    return view('elegirProyecto');
+});
+
 Route::get('/verpagos', function () {
     return view('verPagos');
 });
@@ -117,3 +121,5 @@ Route::get('/verdocumentosadmin', function () {
 Route::get('/verproyectos', function () {
     return view('verProyectos');
 });
+
+Route::get('/clientes','UsuarioController@create');

@@ -22,7 +22,8 @@
                     <thead>
                         <tr>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Precio del lote MXN</th>
+                            <th scope="col">Precio total MXN</th>
+                            <th scope="col">Precio por lote MXN</th>
                             <th scope="col">Fase</th>
                             <th scope="col">Ubicación</th>
                             <th scope="col">Manzana</th>
@@ -31,11 +32,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($proyectos as $p)
                         <tr>
-                            <td>Fraccionamiento "Las Pilitas"</td>
-                            <td>150,000.00</td>
-                            <td>3 Adecuada al área</td>
-                            <td>Puerto Vallarta, Jalisco</td>
+                            <td>{{$p->nombre}}</td>
+                            <td>{{$p->precio}}</td>
+                            <td>{{$p->precio_lote}}</td>
+                            <td>{{$p->fase}}</td>
+                            <td>{{$p->ubicacion}}</td>
                             <td>M1</td>
                             <td>L1</td>
                             <td>
@@ -44,32 +47,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Fraccionamiento "Las Pilitas"</td>
-                            <td>150,000.00</td>
-                            <td>3 Adecuada al área</td>
-                            <td>Puerto Vallarta, Jalisco</td>
-                            <td>M1</td>
-                            <td>L1</td>
-                            <td>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Fraccionamiento "Las Pilitas"</td>
-                            <td>150,000.00</td>
-                            <td>3 Adecuada al área</td>
-                            <td>Puerto Vallarta, Jalisco</td>
-                            <td>M1</td>
-                            <td>L1</td>
-                            <td>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                                </div>
-                            </td>
-                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
