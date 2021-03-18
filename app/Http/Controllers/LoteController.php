@@ -58,12 +58,7 @@ class LoteController extends Controller
      */
     public function edit(int $id)
     {
-        $lotes =  DB::select(
-            "call sp_consultarLotes($id)"
-      );
-    //dd($lotes);
-      
-    return view('apartarLotes',['lotes'=>$lotes]);
+       //
     }
 
     /**
@@ -75,7 +70,25 @@ class LoteController extends Controller
      */
     public function update(Request $request, Prueba $prueba)
     {
-        //
+        $resultados = collect([]);
+
+        $manzanas =  DB::select
+        (
+            "call sp_consultarManzanas($id)"
+        );
+    
+        foreach($manzanas as $m)
+        {
+            $lotes = DB::select
+            (
+                "call sp_consultarLotes($m->id_manzana)"
+            );
+
+            $resultados->offsetSet($m->id_manzana, $lotes);
+        }
+        
+        //dd($resultados);
+        return view('apartarLotes',['fotos'=>$resultados,'proyectos'=>$proyectos]);
     }
 
     /**

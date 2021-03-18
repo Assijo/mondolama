@@ -54,7 +54,7 @@
                 <div class="col-3"></div>
             </div>
             <div class="row my-5">
-                <button type="submit" class="btn btn-dark mx-auto" onclick="actions2();">Realizar pago</button>
+                <button type="submit" class="btn btn-dark mx-auto">Elegir cliente</button>
             </div>
         </form>
     </div>

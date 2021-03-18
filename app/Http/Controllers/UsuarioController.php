@@ -65,13 +65,13 @@ class UsuarioController extends Controller
         {
             session()->flush();
             session(['sesionVendedor' => 'sesionVendedor']);
-            return redirect('/index');
+            return redirect('/elegirproyecto');
         }
         else
         {
             session()->flush();
             session(['sesionCliente' => 'sesionCliente']);
-            return redirect('/administrarproyectos'); 
+            return redirect('/pagarproyecto'); 
         }
     }
 

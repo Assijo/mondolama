@@ -50,6 +50,7 @@ Route::resource('/verperfil','UsuarioController');
 
 Route::get('/',function(){return view('index');});
 Route::get('/vistaproyecto/{id}',['as'=>'/vistaproyecto','uses'=>'ProyectoClienteController@show']);
+Route::get('/apartarlotes/{id}',['as'=>'/apartarlotes','uses'=>'LoteController@show']);
 Route::get('/terminoscondiciones', 'BannerController@show');
 Route::get('/politicasprivacidad', 'BannerController@update');
 

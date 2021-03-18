@@ -48,13 +48,13 @@ class LoginController extends Controller
             {
                 session()->flush();
                 session(['sesionVendedor' => 'sesionVendedor']);
-                return redirect('/acercade');
+                return redirect('/elegirproyecto');
             }
             elseif($login[0]->id_tipo_persona == 4)
             {
                 session()->flush();
                 session(['sesionCliente' => 'sesionCliente']);
-                return redirect('/politicasprivacidad');
+                return redirect('/pagarproyecto');
             }
         }
         else

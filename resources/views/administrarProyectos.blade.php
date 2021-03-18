@@ -108,7 +108,7 @@
                                             </svg>
                                         </a>
                                     </div>
-                                    <!--@if($p->id_tipo_proyecto === 3)
+                                    @if($p->id_tipo_proyecto === 3)
                                     <div class="d-flex mx-1">
                                         <a href="{{  url('/administrarlotesmanzanas',[$p->id_proyecto])}}">
                                             <svg width="14px" height="14px" viewBox="0 0 181.2 157.7">
@@ -134,11 +134,14 @@
                                         </a>
                                     </div>
                                     @else
+                                    <!--
                                     <div class="custom-control custom-switch ml-2 mt-n1">
                                         <input type="checkbox" class="custom-control-input" id="customSwitch1">
                                         <label class="custom-control-label" for="customSwitch1"></label>
                                     </div>
-                                    @endif-->
+                                    -->
+                                    <a href="{{url('/clientes')}}" class="badge badge-dark">Apartar</a>
+                                    @endif
                                 </div>
                             </td>
                         </tr>
