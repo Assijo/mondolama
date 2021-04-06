@@ -49,28 +49,41 @@ class UsuarioController extends Controller
     {
         DB::select('call sp_insertarUsuario(?,?,?,?,?,?,?,?)',array($request->nombre,$request->ap_paterno,$request->ap_materno,$request->fecha_nacimiento,$request->telefono,$request->correo,$request->contrasena,$request->id_tipo_usuario)); 
         
+        $idUsuario = DB::select('call sp_consultarUltimoIdUsuario');
+        /*$idUsuario = DB::select(DB::raw("
+        SELECT MAX(id_persona) as ultimoId  FROM persona"
+        ));
+        dd($idUsuario[0]->ultimoId);*/
         if($request->id_tipo_usuario==1)
         {
             session()->flush();
             session(['sesionAdminMaster' => 'sesionAdminMaster']);
+            session(['idUsuario' => $idUsuario[0]->resultado]);
+            dd(session('idUsuario'));
             return redirect('/administrarproyectos');
         }
         elseif ($request->id_tipo_usuario==2)
         {
             session()->flush();
             session(['sesionAdmin' => 'sesionAdmin']);
+            session(['idUsuario' => $idUsuario[0]->resultado]);
+            dd(session('idUsuario'));
             return redirect('/administrarproyectos');
         }
         elseif ($request->id_tipo_usuario==3)
         {
             session()->flush();
             session(['sesionVendedor' => 'sesionVendedor']);
+            session(['idUsuario' => $idUsuario[0]->resultado]);
+            dd(session('idUsuario'));
             return redirect('/elegirproyecto');
         }
         else
         {
             session()->flush();
             session(['sesionCliente' => 'sesionCliente']);
+            session(['idUsuario' => $idUsuario[0]->resultado]);
+            //dd(session('idUsuario'));
             return redirect('/pagarproyecto'); 
         }
     }

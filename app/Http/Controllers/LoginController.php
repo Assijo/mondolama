@@ -36,24 +36,28 @@ class LoginController extends Controller
             {
                 session()->flush();
                 session(['sesionAdminMaster' => 'sesionAdminMaster']);
+                session(['idUsuario' => $login[0]->id_persona]);
                 return redirect('/administrarproyectos');
             }
             elseif($login[0]->id_tipo_persona == 2)
             {
                 session()->flush();
                 session(['sesionAdmin' => 'sesionAdmin']);
+                session(['idUsuario' => $login[0]->id_persona]);
                 return redirect('/administrarproyectos');
             }
             elseif($login[0]->id_tipo_persona == 3)
             {
                 session()->flush();
                 session(['sesionVendedor' => 'sesionVendedor']);
+                session(['idUsuario' => $login[0]->id_persona]);
                 return redirect('/elegirproyecto');
             }
             elseif($login[0]->id_tipo_persona == 4)
             {
                 session()->flush();
                 session(['sesionCliente' => 'sesionCliente']);
+                session(['idUsuario' => $login[0]->id_persona]);
                 return redirect('/pagarproyecto');
             }
         }
