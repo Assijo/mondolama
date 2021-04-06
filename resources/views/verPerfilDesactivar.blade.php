@@ -1,5 +1,4 @@
 @extends('plantillas/menuNavegacion')
-@include('modales/modificarDatos')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center">
