@@ -115,8 +115,8 @@ Route::get('/verpagos', function () {
     return view('verPagos');
 });
 
-Route::get('/verdocumentosadmin', function () {
-    return view('verDocumentosAdmin');
+Route::get('/verdocumentos', function () {
+    return view('verDocumentos');
 });
 
 Route::get('/verproyectos', function () {

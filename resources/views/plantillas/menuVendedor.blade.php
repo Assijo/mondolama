@@ -22,7 +22,7 @@
                 <a class="nav-link" href="{{url('pagosaprobar')}}">Aprobar pagos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('administrarproyectos')}}">Administrar proyectos</a>
+                <a class="nav-link" href="{{url('elegirproyecto')}}">Proyectos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('verperfildesactivar')}}">Ver perfil</a>

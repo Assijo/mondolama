@@ -1,4 +1,4 @@
-@extends('plantillas/menuNavegacion')
+@extends('plantillas/menuCliente')
 @section('contenido')
     <div class="container d-flex-block mt-5 align-self-center flex-shrink-0">
         <div class="row align-items-center mb-5">

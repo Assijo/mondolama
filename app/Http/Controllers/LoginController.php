@@ -58,7 +58,7 @@ class LoginController extends Controller
                 session()->flush();
                 session(['sesionCliente' => 'sesionCliente']);
                 session(['idUsuario' => $login[0]->id_persona]);
-                return redirect('/pagarproyecto');
+                return redirect('/verpagos');
             }
         }
         else
