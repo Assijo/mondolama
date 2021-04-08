@@ -34,7 +34,7 @@ Route::middleware('sesionAdministradores')->group(function () { //grupos de ruta
 
 Route::middleware(['sesionVendedor'])->group(function ()
 {
-
+    
 
 
 });
@@ -45,7 +45,7 @@ Route::middleware(['sesionCliente'])->group(function ()
     
 
 });
-
+Route::get('/elegirproyecto', 'ProyectoClienteController@update');
 Route::resource('/verperfil','UsuarioController');
 
 Route::get('/',function(){return view('index');});
@@ -105,10 +105,6 @@ Route::get('/verperfildesactivar', function () {
 
 Route::get('/pagarproyecto', function () {
     return view('pagarProyecto');
-});
-
-Route::get('/elegirproyecto', function () {
-    return view('elegirProyecto');
 });
 
 Route::get('/verpagos', function () {

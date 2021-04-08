@@ -94,10 +94,9 @@ class ProyectoClienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $prueba)
+    public function edit()
     {
         //
     }
@@ -109,9 +108,14 @@ class ProyectoClienteController extends Controller
      * @param  \App\Models\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prueba $prueba)
+    public function update()
     {
-        //
+        $proyectos =  DB::select
+        (
+            "call sp_consultarProyectos()"
+        );
+
+        return view('elegirProyecto',['proyectos'=>$proyectos]);
     }
 
     /**

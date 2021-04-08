@@ -25,7 +25,7 @@
                 <a class="nav-link" href="{{url('elegirproyecto')}}">Proyectos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('verperfildesactivar')}}">Ver perfil</a>
+                <a class="nav-link" href="{{url('verperfil')}}">Ver perfil</a>
             </li>
         </ul>
     </div>

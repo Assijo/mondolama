@@ -41,9 +41,6 @@
                                 <td>{{$p->precio_lote}}</td>
                                 <td>{{$p->fase}}</td>
                                 <td>{{$p->ubicacion}}</td>
-                                @php
-                                    $imagen=$fotos[$p->id_proyecto];
-                                @endphp
                                 <td>
                                     <div class="d-flex flex-row">
                                         @if($p->id_tipo_proyecto === 3)
